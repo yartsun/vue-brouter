@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Foo = { template: `<div class="foo"><h1>foo</h1></div>` }
 const Bar = { template: `<div class="bar"><h1>bar</h1></div>` }
 
-const childRouter = new VueRouter({
+const childRouter = new VuebRouter({
   mode: 'abstract',
   routes: [
     { path: '/foo', component: Foo },
@@ -17,7 +17,7 @@ const childRouter = new VueRouter({
 const Nested = {
   router: childRouter,
   template: `<div class="child">
-    <p>Child router path: {{ $route.fullPath }}</p>
+    <p>Child router path: {{ $bRoute.fullPath }}</p>
     <ul>
       <li><router-link to="/foo">/foo</router-link></li>
       <li><router-link to="/bar">/bar</router-link></li>
@@ -26,7 +26,7 @@ const Nested = {
   </div>`
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [
@@ -40,7 +40,7 @@ new Vue({
   router,
   template: `
     <div id="app">
-      <p>Root router path: {{ $route.fullPath }}</p>
+      <p>Root router path: {{ $bRoute.fullPath }}</p>
       <ul>
         <li><router-link to="/nested-router">/nested-router</router-link></li>
         <li><router-link to="/foo">/foo</router-link></li>

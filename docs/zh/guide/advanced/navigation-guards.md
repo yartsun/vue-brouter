@@ -6,14 +6,14 @@
 
 正如其名，`vue-router` 提供的导航守卫主要用来通过跳转或取消的方式守卫导航。有多种机会植入路由导航过程中：全局的, 单个路由独享的, 或者组件级的。
 
-记住**参数或查询的改变并不会触发进入/离开的导航守卫**。你可以通过[观察 `$route` 对象](../essentials/dynamic-matching.md#响应路由参数的变化)来应对这些变化，或使用 `beforeRouteUpdate` 的组件内守卫。
+记住**参数或查询的改变并不会触发进入/离开的导航守卫**。你可以通过[观察 `$bRoute` 对象](../essentials/dynamic-matching.md#响应路由参数的变化)来应对这些变化，或使用 `beforeRouteUpdate` 的组件内守卫。
 
 ## 全局前置守卫
 
 你可以使用 `router.beforeEach` 注册一个全局前置守卫：
 
 ``` js
-const router = new VueRouter({ ... })
+const router = new VuebRouter({ ... })
 
 router.beforeEach((to, from, next) => {
   // ...
@@ -61,7 +61,7 @@ router.afterEach((to, from) => {
 你可以在路由配置上直接定义 `beforeEnter` 守卫：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',

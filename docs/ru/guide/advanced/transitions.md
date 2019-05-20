@@ -44,10 +44,10 @@ const Bar = {
 ```
 
 ```js
-// затем, в родительском компоненте, будем следить за переменной `$route`,
+// затем, в родительском компоненте, будем следить за переменной `$bRoute`,
 // чтобы определить, какой анимационный переход применять
 watch: {
-  '$route' (to, from) {
+  '$bRoute' (to, from) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'

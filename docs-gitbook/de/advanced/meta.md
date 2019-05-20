@@ -3,7 +3,7 @@
 In der Route-Definition kann man ein Meta-Feld definieren:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',
@@ -27,7 +27,7 @@ Zunächst einmal: Wir nennen jedes Route-Objekt in der `routes`-Konfiguration **
 
 Zum Beispiel werden mit der obigen Konfiguration und der URL `/foo/bar` beide - Parent-Record und Child-Record - gematched.
 
-Alle Route-Records, die auf eine URL zutreffen, sind im `$route`-Objekt und in den Route-Objekten in Navigation-Guards im `$route.matched`-Array zu finden. Deswegen müssen wir mit einer Schleife das `$route.matched` Array durchlaufen, um alle Route-Records auf Metafelder zu prüfen.
+Alle Route-Records, die auf eine URL zutreffen, sind im `$bRoute`-Objekt und in den Route-Objekten in Navigation-Guards im `$bRoute.matched`-Array zu finden. Deswegen müssen wir mit einer Schleife das `$bRoute.matched` Array durchlaufen, um alle Route-Records auf Metafelder zu prüfen.
 
 Ein Anwendungsfall ist die Prüfung nach einem Metafeld im globalen Before-Guard:
 

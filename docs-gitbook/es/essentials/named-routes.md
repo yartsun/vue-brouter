@@ -3,7 +3,7 @@
  A veces es conveniente identificar una ruta con un nombre, especialmente cuando enlazamos a esa ruta o navegamos mediante código. Puedes darle un nombre a una ruta en las opciones de `routes` cuando se crea la instancia de Router:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:userId',

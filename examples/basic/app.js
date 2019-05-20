@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
 // 1. Use plugin.
 // This installs <router-view> and <router-link>,
-// and injects $router and $route to all router-enabled child components
-Vue.use(VueRouter)
+// and injects $bRouter and $bRoute to all router-enabled child components
+Vue.use(VuebRouter)
 
 // 2. Define route components
 const Home = { template: '<div>home</div>' }
@@ -13,7 +13,7 @@ const Bar = { template: '<div>bar</div>' }
 const Unicode = { template: '<div>unicode</div>' }
 
 // 3. Create the router
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [
@@ -46,8 +46,8 @@ new Vue({
       </ul>
       <button id="navigate-btn" @click="navigateAndIncrement">On Success</button>
       <pre id="counter">{{ n }}</pre>
-      <pre id="query-t">{{ $route.query.t }}</pre>
-      <pre id="hash">{{ $route.hash }}</pre>
+      <pre id="query-t">{{ $bRoute.query.t }}</pre>
+      <pre id="hash">{{ $bRoute.hash }}</pre>
       <router-view class="view"></router-view>
     </div>
   `,
@@ -55,10 +55,10 @@ new Vue({
   methods: {
     navigateAndIncrement () {
       const increment = () => this.n++
-      if (this.$route.path === '/') {
-        this.$router.push('/foo', increment)
+      if (this.$bRoute.path === '/') {
+        this.$bRouter.push('/foo', increment)
       } else {
-        this.$router.push('/', increment)
+        this.$bRouter.push('/', increment)
       }
     }
   }

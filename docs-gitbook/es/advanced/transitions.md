@@ -45,9 +45,9 @@ También es posible determinar dinámicamente la transición a utilizar basado e
 
 ``` js
 // luego, en el componente padre,
-// observa $route para determinar que transición utilizar
+// observa $bRoute para determinar que transición utilizar
 watch: {
-  '$route' (to, from) {
+  '$bRoute' (to, from) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'

@@ -34,8 +34,8 @@ Creating a Single-page Application with Vue + Vue Router is dead simple. With Vu
 ## JavaScript
 
 ``` js
-// 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter
-// and then call `Vue.use(VueRouter)`.
+// 0. If using a module system (e.g. via vue-cli), import Vue and VuebRouter
+// and then call `Vue.use(VuebRouter)`.
 
 // 1. Define route components.
 // These can be imported from other files
@@ -55,7 +55,7 @@ const routes = [
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // short for `routes: routes`
 })
 
@@ -69,7 +69,7 @@ const app = new Vue({
 // Now the app has started!
 ```
 
-By injecting the router, we get access to it as `this.$router` as well as the current route as `this.$route` inside of any component:
+By injecting the router, we get access to it as `this.$bRouter` as well as the current route as `this.$bRoute` inside of any component:
 
 ```js
 // Home.vue
@@ -77,20 +77,20 @@ export default {
   computed: {
     username () {
       // We will see what `params` is shortly
-      return this.$route.params.username
+      return this.$bRoute.params.username
     }
   },
   methods: {
     goBack () {
       window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+        ? this.$bRouter.go(-1)
+        : this.$bRouter.push('/')
     }
   }
 }
 ```
 
-Throughout the docs, we will often use the `router` instance. Keep in mind that `this.$router` is exactly the same as using `router`. The reason we use `this.$router` is because we don't want to import the router in every single component that needs to manipulate routing.
+Throughout the docs, we will often use the `router` instance. Keep in mind that `this.$bRouter` is exactly the same as using `router`. The reason we use `this.$bRouter` is because we don't want to import the router in every single component that needs to manipulate routing.
 
 You can also check out this example [live](https://jsfiddle.net/yyx990803/xgrjzsup/).
 

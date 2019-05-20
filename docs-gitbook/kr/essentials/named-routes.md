@@ -3,7 +3,7 @@
 때로는 라우트에 연결하거나 탐색을 수행 할 때 이름이 있는 라우트를 사용하는 것이 더 편리합니다. Router 인스턴스를 생성하는 동안 `routes` 옵션에 라우트를 지정할 수 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:userId',

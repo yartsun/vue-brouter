@@ -399,9 +399,9 @@ The route object is immutable. Every successful navigation will result in a fres
 
 The route object can be found in multiple places:
 
-- Inside components as `this.$route`
+- Inside components as `this.$bRoute`
 
-- Inside `$route` watcher callbacks
+- Inside `$bRoute` watcher callbacks
 
 - As the return value of calling `router.match(location)`
 
@@ -416,7 +416,7 @@ The route object can be found in multiple places:
 - Inside the `scrollBehavior` function as the first two arguments:
 
   ``` js
-  const router = new VueRouter({
+  const router = new VuebRouter({
     scrollBehavior (to, from, savedPosition) {
       // `to` and `from` are both route objects
     }
@@ -425,44 +425,44 @@ The route object can be found in multiple places:
 
 ### Route Object Properties
 
-- **$route.path**
+- **$bRoute.path**
 
   - type: `string`
 
     A string that equals the path of the current route, always resolved as an absolute path. e.g. `"/foo/bar"`.
 
-- **$route.params**
+- **$bRoute.params**
 
   - type: `Object`
 
     An object that contains key/value pairs of dynamic segments and star segments. If there are no params the value will be an empty object.
 
-- **$route.query**
+- **$bRoute.query**
 
   - type: `Object`
 
-    An object that contains key/value pairs of the query string. For example, for a path `/foo?user=1`, we get `$route.query.user == 1`. If there is no query the value will be an empty object.
+    An object that contains key/value pairs of the query string. For example, for a path `/foo?user=1`, we get `$bRoute.query.user == 1`. If there is no query the value will be an empty object.
 
-- **$route.hash**
+- **$bRoute.hash**
 
   - type: `string`
 
     The hash of the current route (with the `#`), if it has one. If no hash is present the value will be an empty string.
 
-- **$route.fullPath**
+- **$bRoute.fullPath**
 
   - type: `string`
 
     The full resolved URL including query and hash.
 
-- **$route.matched**
+- **$bRoute.matched**
 
   - type: `Array<RouteRecord>`
 
   An Array containing **route records** for all nested path segments of the current route. Route records are the copies of the objects in the `routes` configuration Array (and in `children` Arrays):
 
   ``` js
-  const router = new VueRouter({
+  const router = new VuebRouter({
     routes: [
       // the following object is a route record
       { path: '/foo', component: Foo,
@@ -475,13 +475,13 @@ The route object can be found in multiple places:
   })
   ```
 
-  When the URL is `/foo/bar`, `$route.matched` will be an Array containing both objects (cloned), in parent to child order.
+  When the URL is `/foo/bar`, `$bRoute.matched` will be an Array containing both objects (cloned), in parent to child order.
 
-- **$route.name**
+- **$bRoute.name**
 
   The name of the current route, if it has one. (See [Named Routes](../guide/essentials/named-routes.md))
 
-- **$route.redirectedFrom**
+- **$bRoute.redirectedFrom**
 
   The name of the route being redirected from, if there were one. (See [Redirect and Alias](../guide/essentials/redirect-and-alias.md))
 
@@ -491,11 +491,11 @@ The route object can be found in multiple places:
 
 These properties are injected into every child component by passing the router instance to the root instance as the `router` option.
 
-- **this.$router**
+- **this.$bRouter**
 
   The router instance.
 
-- **this.$route**
+- **this.$bRoute**
 
   The current active [Route](#the-route-object). This property is read-only and its properties are immutable, but it can be watched.
 

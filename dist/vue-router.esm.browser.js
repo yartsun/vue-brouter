@@ -45,7 +45,7 @@ var View = {
     // so that components rendered by router-view can resolve named slots
     const h = parent.$createElement;
     const name = props.name;
-    const route = parent.$route;
+    const route = parent.$bRoute;
     const cache = parent._routerViewCache || (parent._routerViewCache = {});
 
     // determine current view depth, also check to see if the tree
@@ -402,8 +402,8 @@ var Link = {
     }
   },
   render (h) {
-    const router = this.$router;
-    const current = this.$route;
+    const router = this.$bRouter;
+    const current = this.$bRoute;
     const { location, route, href } = router.resolve(this.to, current, this.append);
 
     const classes = {};
@@ -525,10 +525,12 @@ function install (Vue) {
       i(vm, callVal);
     }
   };
-
+  var bVue;
   Vue.mixin({
     beforeCreate () {
       if (isDef(this.$options.router)) {
+        global.bVue = this;
+        console.log(bVue);
         this._routerRoot = this;
         this._router = this.$options.router;
         this._router.init(this);
@@ -543,11 +545,11 @@ function install (Vue) {
     }
   });
 
-  Object.defineProperty(Vue.prototype, '$router', {
+  Object.defineProperty(Vue.prototype, '$bRouter', {
     get () { return this._routerRoot._router }
   });
 
-  Object.defineProperty(Vue.prototype, '$route', {
+  Object.defineProperty(Vue.prototype, '$bRoute', {
     get () { return this._routerRoot._route }
   });
 
@@ -1144,11 +1146,6 @@ function addRouteRecord (
   const { path, name } = route;
   {
     assert(path != null, `"path" is required in a route configuration.`);
-    assert(
-      typeof route.component !== 'string',
-      `route config "component" for path: ${String(path || name)} cannot be a ` +
-      `string id. Use an actual component instead.`
-    );
   }
 
   const pathToRegexpOptions = route.pathToRegexpOptions || {};
@@ -1322,8 +1319,6 @@ function normalizeLocation (
 
 /*  */
 
-
-
 function createMatcher (
   routes,
   router
@@ -1333,7 +1328,24 @@ function createMatcher (
   function addRoutes (routes) {
     createRouteMap(routes, pathList, pathMap, nameMap);
   }
-
+  function matchBackRoutes (
+    raw,
+    routes) {
+    const routeMap = createRouteMap(Object.values(routes), pathList, pathMap, nameMap);
+    const pathList = routeMap.pathList;
+    const pathMap = routeMap.pathMap;
+    const location = normalizeLocation(raw, '', false);
+    if (location.path) {
+      location.params = {};
+      bVue._router.options.routes = routes;
+      pathList.forEach(path => {
+        if (matchRoute(pathMap[path].regex, location.path, location.params)) {
+          bVue._route = createRoute(pathMap[path], location, pathMap[path].redirect, bVue._router);
+        }
+        return false
+      });
+    }
+  }
   function match (
     raw,
     currentRoute,
@@ -1479,7 +1491,8 @@ function createMatcher (
 
   return {
     match,
-    addRoutes
+    addRoutes,
+    matchBackRoutes
   }
 }
 
@@ -2104,7 +2117,6 @@ function bindEnterGuard (
 ) {
   return function routeEnterGuard (to, from, next) {
     return guard(to, from, cb => {
-      next(cb);
       if (typeof cb === 'function') {
         cbs.push(() => {
           // #750
@@ -2115,6 +2127,7 @@ function bindEnterGuard (
           poll(cb, match.instances, key, isValid);
         });
       }
+      next(cb);
     })
   }
 }
@@ -2403,7 +2416,7 @@ class AbstractHistory extends History {
 
 
 
-class VueRouter {
+class VuebRouter {
   
   
 
@@ -2471,7 +2484,7 @@ class VueRouter {
   init (app /* Vue component instance */) {
     "development" !== 'production' && assert(
       install.installed,
-      `not installed. Make sure to call \`Vue.use(VueRouter)\` ` +
+      `not installed. Make sure to call \`Vue.use(VuebRouter)\` ` +
       `before creating root instance.`
     );
 
@@ -2621,11 +2634,11 @@ function createHref (base, fullPath, mode) {
   return base ? cleanPath(base + '/' + path) : path
 }
 
-VueRouter.install = install;
-VueRouter.version = '3.0.6';
+VuebRouter.install = install;
+VuebRouter.version = '3.0.6';
 
 if (inBrowser && window.Vue) {
-  window.Vue.use(VueRouter);
+  window.Vue.use(VuebRouter);
 }
 
-export default VueRouter;
+export default VuebRouter;

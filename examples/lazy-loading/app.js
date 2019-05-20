@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<div>home</div>' }
 
@@ -36,7 +36,7 @@ const Foo = () => import('./Foo.vue')
 const Bar = () => import(/* webpackChunkName: "bar" */ './Bar.vue')
 const Baz = () => import(/* webpackChunkName: "bar" */ './Baz.vue')
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [
@@ -50,7 +50,7 @@ const router = new VueRouter({
         resolve({
           template: `<div>
             <h2>Lazy with params</h2>
-            <pre id="tagged-path">{{ $route.path }}</pre>
+            <pre id="tagged-path">{{ $bRoute.path }}</pre>
           </div>`
         })
       }, 200)

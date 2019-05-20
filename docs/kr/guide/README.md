@@ -35,7 +35,7 @@ Vue와 Vue 라우터를 이용해 싱글 페이지 앱을 만드는 것은 매�
 
 ``` js
 // 0. 모듈 시스템 (예: vue-cli)을 이용하고 있다면, Vue와 Vue 라우터를 import 하세요
-// 그리고 `Vue.use(VueRouter)`를 호출하세요
+// 그리고 `Vue.use(VuebRouter)`를 호출하세요
 
 
 // 1. 라우트 컴포넌트를 정의하세요.
@@ -56,7 +56,7 @@ const routes = [
 // 3. `routes` 옵션과 함께 router 인스턴스를 만드세요.
 // 추가 옵션을 여기서 전달해야합니다.
 // 지금은 간단하게 유지하겠습니다.
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // `routes: routes`의 줄임
 })
 
@@ -69,7 +69,7 @@ const app = new Vue({
 // 이제 앱이 시작됩니다!
 ```
 
-라우터를 주입하였으므로 `this.$router`와 현재 라우트를 `this.$route`로 접근할 수 있습니다.
+라우터를 주입하였으므로 `this.$bRouter`와 현재 라우트를 `this.$bRoute`로 접근할 수 있습니다.
 
 ```js
 // Home.vue
@@ -77,20 +77,20 @@ export default {
   computed: {
     username () {
       // 곧 `params` 확인할 수 있습니다.
-      return this.$route.params.username
+      return this.$bRoute.params.username
     }
   },
   methods: {
     goBack () {
       window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+        ? this.$bRouter.go(-1)
+        : this.$bRouter.push('/')
     }
   }
 }
 ```
 
-문서 전체에서 `router`를 자주 사용했습니다. `this.$router`는 정확히 `router`와 동일합니다. `this.$router`를 사용하는 이유는 라우터를 조작해야하는 모든 컴포넌트에서 라우트 객체를 가져올 필요가 없기 때문입니다.
+문서 전체에서 `router`를 자주 사용했습니다. `this.$bRouter`는 정확히 `router`와 동일합니다. `this.$bRouter`를 사용하는 이유는 라우터를 조작해야하는 모든 컴포넌트에서 라우트 객체를 가져올 필요가 없기 때문입니다.
 
 
 이 [예제](https://jsfiddle.net/yyx990803/xgrjzsup/)에서 바로 확인해볼 수 있습니다.

@@ -5,7 +5,7 @@
 리디렉션은 `routes` 설정에서도 할 수 있습니다. `/a`에서 `/b`로 리디렉션하려면
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -15,7 +15,7 @@ const router = new VueRouter({
 리디렉션은 이름이 지정된 라우트를 지정할 수도 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -25,7 +25,7 @@ const router = new VueRouter({
 또는 동적 리디렉션을 위한 함수를 사용할 수도 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // 함수는 인수로 대상 라우트를 받습니다.
@@ -45,7 +45,7 @@ const router = new VueRouter({
 위는 라우트 구성에서 다음과 같이 표현할 수 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

@@ -5,7 +5,7 @@
 Мы можем обойтись без хэша, используя **режим history**, который работает с API `history.pushState` для достижения той же цели:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -127,7 +127,7 @@ rewrite {
 При таком подходе возникает одно неприятное последствие: ваш сервер больше не будет сообщать об ошибках 404, поскольку все найденные пути теперь возвращают `index.html`. Чтобы обойти эту проблему, вы должны реализовать специальный маршрут в своём приложении Vue, чтобы показывать страницу 404:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

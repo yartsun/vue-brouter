@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 // A route component can also contain <router-view> to render
 // nested children route components
@@ -32,7 +32,7 @@ const Quy = {
   template: `
     <div class="nested-parent-other">
       <h3>quy</h3>
-      <pre>{{ JSON.stringify(Object.keys($route.params)) }}</pre>
+      <pre>{{ JSON.stringify(Object.keys($bRoute.params)) }}</pre>
     </div>
   `
 }
@@ -41,10 +41,10 @@ const Quux = {
 }
 const Quuy = { template: '<div>quuy</div>' }
 const Zap = {
-  template: '<div><h3>zap</h3><pre>{{ $route.params.zapId }}</pre></div>'
+  template: '<div><h3>zap</h3><pre>{{ $bRoute.params.zapId }}</pre></div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

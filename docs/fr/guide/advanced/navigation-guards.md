@@ -2,14 +2,14 @@
 
 Comme le nom le suggère, l'interception de navigation fournie par `vue-router` est principalement utilisée pour intercepter la navigation avec des redirections ou des annulations d'accès. Il y a plusieurs hooks disponibles lors du processus de navigation : globaux, par route ou par composant.
 
-Souvenez-vous de cela : **le changement de paramètre ou de query ne va pas lancer d'interception d'entrée ou de sortie de navigation**. Vous pouvez toujours [observer l'objet `$route`](../essentials/dynamic-matching.md#reacting-to-params-changes) pour réagir à ces changements, ou utiliser la fonction `beforeRouteUpdate` d'une interception par composant.
+Souvenez-vous de cela : **le changement de paramètre ou de query ne va pas lancer d'interception d'entrée ou de sortie de navigation**. Vous pouvez toujours [observer l'objet `$bRoute`](../essentials/dynamic-matching.md#reacting-to-params-changes) pour réagir à ces changements, ou utiliser la fonction `beforeRouteUpdate` d'une interception par composant.
 
 ## Interception globale
 
 Vous pouvez abonner une interception d'entrée en utilisant `router.beforeEach` :
 
 ``` js
-const router = new VueRouter({ ... })
+const router = new VuebRouter({ ... })
 
 router.beforeEach((to, from, next) => {
   // ...
@@ -55,7 +55,7 @@ router.afterEach((to, from) => {
 Vous pouvez définir l'interception `beforeEnter` directement sur l'objet de configuration d'une route :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',

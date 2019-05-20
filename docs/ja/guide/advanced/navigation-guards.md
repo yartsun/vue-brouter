@@ -2,14 +2,14 @@
 
 この名前が示すように、 `vue-router` によって提供されるナビゲーションガードは、リダイレクトもしくはキャンセルによって遷移をガードするために主に使用されます。ルートナビゲーション処理 (グローバル、ルート単位、コンポーネント内) をフックする多くの方法があります。
 
-**パラメータまたはクエリの変更は enter/leave ナビゲーションガードをトリガーしない** ということを覚えておいてください。それらの変更に対応するために [`$route` オブジェクトを監視する](../essentials/dynamic-matching.md#reacting-to-params-changes)、またはコンポーネント内ガード `beforeRouteUpdate` を使用するかの、どちらかができます。
+**パラメータまたはクエリの変更は enter/leave ナビゲーションガードをトリガーしない** ということを覚えておいてください。それらの変更に対応するために [`$bRoute` オブジェクトを監視する](../essentials/dynamic-matching.md#reacting-to-params-changes)、またはコンポーネント内ガード `beforeRouteUpdate` を使用するかの、どちらかができます。
 
 ## グローバルビフォーガード
 
 `router.beforeEach` を使ってグローバル before ガードを登録できます。
 
 ``` js
-const router = new VueRouter({ ... })
+const router = new VuebRouter({ ... })
 
 router.beforeEach((to, from, next) => {
   // ...
@@ -57,7 +57,7 @@ router.afterEach((to, from) => {
 直接ルート設定オブジェクトの `beforeEnter` ガードを定義することができます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',

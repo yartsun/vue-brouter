@@ -52,11 +52,6 @@ function addRouteRecord (
   const { path, name } = route
   if (process.env.NODE_ENV !== 'production') {
     assert(path != null, `"path" is required in a route configuration.`)
-    assert(
-      typeof route.component !== 'string',
-      `route config "component" for path: ${String(path || name)} cannot be a ` +
-      `string id. Use an actual component instead.`
-    )
   }
 
   const pathToRegexpOptions: PathToRegexpOptions = route.pathToRegexpOptions || {}

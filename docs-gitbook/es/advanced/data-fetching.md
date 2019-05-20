@@ -12,7 +12,7 @@ Técnicamente, ambas opciones son válidas - todo depende de la experiencia de u
 
 Cuando utilizamos este enfoque, navegamos y renderizamos el componente entrante inmediatamente, y obtenemos los datos en el _hook_ `created` del componente. Esto nos permite mostrar un indicador de estado de carga mientras se obtiene la información desde un servidor remoto, y también manejar la carga de datos según la ruta.
 
-Asumamos que tenemos un componente `Post` que necesita obtener datos de un _post_ basándose en `$route.params.id`:
+Asumamos que tenemos un componente `Post` que necesita obtener datos de un _post_ basándose en `$bRoute.params.id`:
 
 ``` html
 <template>
@@ -49,14 +49,14 @@ export default {
   },
   watch: {
     // ejecuta nuevamente el método si la ruta cambia
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // reemplaza getPost con lo que corresponda
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()

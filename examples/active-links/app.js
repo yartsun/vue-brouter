@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<div><h2>Home</h2></div>' }
 const About = { template: '<div><h2>About</h2></div>' }
@@ -15,9 +15,9 @@ const Users = {
   `
 }
 
-const User = { template: '<div>{{ $route.params.username }}</div>' }
+const User = { template: '<div>{{ $bRoute.params.username }}</div>' }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

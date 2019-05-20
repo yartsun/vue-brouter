@@ -30,7 +30,7 @@ Eine Single-Page-Applikation mit Vue.js und vue-router zu erstellen ist wirklich
 ### JavaScript
 
 ``` js
-// 0. Wenn du ein Modul-System wie Webpack oder Browserify benutzt (z. B. via vue-cli), importiere Vue sowie VueRouter und rufe Vue.use(VueRouter) auf.
+// 0. Wenn du ein Modul-System wie Webpack oder Browserify benutzt (z. B. via vue-cli), importiere Vue sowie VuebRouter und rufe Vue.use(VuebRouter) auf.
 
 // 1. Definiere die Route-Komponenten
 // Diese können auch aus anderen Dateien importiert werden.
@@ -51,7 +51,7 @@ const routes = [
 // 3. Erstelle die Router-Instanz und füge ihr die `routes`-Option hinzu.
 // Es gibt ntürlich noch mehr Optionen, aber hier halten wir es erstmal einfach.
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // kurz für 'routes: routes'
 })
 

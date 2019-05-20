@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Login</h2>
-    <p v-if="$route.query.redirect">
+    <p v-if="$bRoute.query.redirect">
       You need to login first.
     </p>
     <form @submit.prevent="login">
@@ -30,7 +30,7 @@ export default {
         if (!loggedIn) {
           this.error = true
         } else {
-          this.$router.replace(this.$route.query.redirect || '/')
+          this.$bRouter.replace(this.$bRoute.query.redirect || '/')
         }
       })
     }

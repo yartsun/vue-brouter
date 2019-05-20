@@ -3,7 +3,7 @@
 Зачастую, при создании ссылок и вызове навигационных методов, удобно ссылаться на путь по его имени. Установить имя пути можно в опциях `routes` при создании экземпляра Router'а:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:userId',

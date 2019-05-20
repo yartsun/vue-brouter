@@ -25,10 +25,10 @@ Dada la aplicación que creamos en el capítulo anterior:
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -41,17 +41,17 @@ Aquí, `<router-view>` es un contenedor de nivel superior. Renderiza el componen
 const User = {
   template: `
     <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
+      <h2>User {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
 }
 ```
 
-Para renderizar componentes dentro de este contenedor anidado, necesitamos usar la opción `children` en la configuración del constructor de `VueRouter`:
+Para renderizar componentes dentro de este contenedor anidado, necesitamos usar la opción `children` en la configuración del constructor de `VuebRouter`:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User,
       children: [
@@ -80,7 +80,7 @@ Como puedes ver, la opción `children` es simplemente otro array de objetos de c
 En este punto, con la configuración anterior, cuando visites `/user/foo`, nada será renderizado dentro del contenedor de  `User` porque ninguna sub ruta coincidió. Tal vez quieras renderizar algo ahí. En ese caso, puedes pasar una sub ruta vacía:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:id', component: User,

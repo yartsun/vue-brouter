@@ -32,13 +32,13 @@ export default {
     this.fetchData()
   },
   watch: {
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()

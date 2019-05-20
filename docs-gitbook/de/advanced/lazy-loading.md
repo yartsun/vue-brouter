@@ -24,7 +24,7 @@ const Foo = resolve => require(['./Foo.vue'], resolve)
 In der Route-Konfiguration muss nichts genändert werden - wir nutzen `Foo` wie gewohnt:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/foo', component: Foo }
   ]

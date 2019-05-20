@@ -3,18 +3,18 @@
  */
 
 import Vue from "vue";
-import VueRouter, { Route, RawLocation, NavigationGuard } from "./index";
+import VuebRouter, { Route, RawLocation, NavigationGuard } from "./index";
 
 declare module "vue/types/vue" {
   interface Vue {
-    $router: VueRouter;
-    $route: Route;
+    $bRouter: VuebRouter;
+    $bRoute: Route;
   }
 }
 
 declare module "vue/types/options" {
   interface ComponentOptions<V extends Vue> {
-    router?: VueRouter;
+    router?: VuebRouter;
     beforeRouteEnter?: NavigationGuard<V>;
     beforeRouteLeave?: NavigationGuard<V>;
     beforeRouteUpdate?: NavigationGuard<V>;

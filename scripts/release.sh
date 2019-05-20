@@ -7,7 +7,6 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
-  npm test
 
   # commit
   npm version $VERSION --message "chore(release): %s"

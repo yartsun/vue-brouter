@@ -1,16 +1,16 @@
 # Передача входных параметров в компоненты маршрутов
 
-Использование `$route` в вашем компоненте создаёт жёсткую связь с маршрутом, что ограничивает гибкость компонента, потому что он может быть использован только для определённых URL-адресов.
+Использование `$bRoute` в вашем компоненте создаёт жёсткую связь с маршрутом, что ограничивает гибкость компонента, потому что он может быть использован только для определённых URL-адресов.
 
 Для разделения компонента от маршрутизатора можно использовать входные параметры:
 
-** Вместо жёсткой связи с `$route`**
+** Вместо жёсткой связи с `$bRoute`**
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -24,7 +24,7 @@ const User = {
   props: ['id'],
   template: '<div>User {{ id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User, props: true },
 
@@ -49,7 +49,7 @@ const router = new VueRouter({
 Когда `props` объект, они будут установлены входными параметрами компонента как есть. Полезно когда входные параметры являются статическими данными.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
   ]
@@ -61,7 +61,7 @@ const router = new VueRouter({
 Вы можете создать функцию, которая вернёт объект с входными параметрами. Это позволяет вам приводить параметры к другим типам, комбинировать статические значения с значениями из маршрута, и т.д.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
   ]

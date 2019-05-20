@@ -12,7 +12,7 @@ Technisch gesehen sind beide Optionen gleich "gut" - letztendlich hängt es davo
 
 In diesem Fall navigieren und rendern wir die neue Komponente direkt und laden die Daten im `created`-Hook der Komponente. Das ermöglicht es uns dem Nutzer in der neuen Komponente einen Ladebalken oder ähnliches anzuzeigen während der Content vom Server geladen wird. Außerdem können wir so den Ladevorgang in jeder Komponente individuell gestalten.
 
-Im folgenden Beispiel haben wir eine `Post`-Komponente, welche Daten für einen Blog-Post basierend auf `$route.params.id` einholt:
+Im folgenden Beispiel haben wir eine `Post`-Komponente, welche Daten für einen Blog-Post basierend auf `$bRoute.params.id` einholt:
 
 ``` html
 <template>
@@ -49,14 +49,14 @@ export default {
   },
   watch: {
     // Rufe die Methode erneut auf, wenn sich die Route ändert.
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // Ersetze 'getPost' mit einem beliebigen AJAX-tool / API-Wrapper
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()
@@ -96,9 +96,9 @@ export default {
   // Wenn die Route geändert und die Komponente bereits gerendert wurde,
   // ist der Aufbau etwas anders:
   watch: {
-    $route () {
+    $bRoute () {
       this.post = null
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         if (err) {
           this.error = err.toString()
         } else {

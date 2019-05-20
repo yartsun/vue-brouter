@@ -7,7 +7,7 @@ const User = {
   template: '<div>User</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     // 동적 세그먼트는 콜론으로 시작합니다.
     { path: '/user/:id', component: User }
@@ -17,38 +17,38 @@ const router = new VueRouter({
 
 이제 `/user/foo`와 `/user/bar` 같은 URL은 모두 같은 경로에 매핑됩니다.
 
-동적 세그먼트는 콜론 `:`으로 표시됩니다. 라우트가 일치하면 동적 세그먼트의 값은 모든 컴포넌트에서 `this.$route.params`로 표시됩니다. 그러므로 `User`의 템플릿을 다음과 같이 갱신하여 현재 사용자 ID를 표현할 수 있습니다 :
+동적 세그먼트는 콜론 `:`으로 표시됩니다. 라우트가 일치하면 동적 세그먼트의 값은 모든 컴포넌트에서 `this.$bRoute.params`로 표시됩니다. 그러므로 `User`의 템플릿을 다음과 같이 갱신하여 현재 사용자 ID를 표현할 수 있습니다 :
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 ```
 
 실제 예제는 [여기](http://jsfiddle.net/yyx990803/4xfa2f19/)에 있습니다.
 
-동일한 라우트에 여러 동적 세그먼트를 가질 수 있으며, `$route.params`의 해당 필드에 매핑됩니다.
+동일한 라우트에 여러 동적 세그먼트를 가질 수 있으며, `$bRoute.params`의 해당 필드에 매핑됩니다.
 
 예:
 
-| 패턴 | 일치하는 패스 | $route.params |
+| 패턴 | 일치하는 패스 | $bRoute.params |
 |---------|------|--------|
 | /user/:username | /user/evan | `{ username: 'evan' }` |
 | /user/:username/post/:post_id | /user/evan/post/123 | `{ username: 'evan', post_id: '123' }` |
 
-`$route.params` 외에도 `$route` 객체는 `$route.query` (URL에 쿼리가 있는 경우), `$route.hash` 등의 유용한 정보를 제공합니다. [API 레퍼런스](../../api/#the-route-object)에서 전체 세부 정보를 확인할 수 있습니다.
+`$bRoute.params` 외에도 `$bRoute` 객체는 `$bRoute.query` (URL에 쿼리가 있는 경우), `$bRoute.hash` 등의 유용한 정보를 제공합니다. [API 레퍼런스](../../api/#the-route-object)에서 전체 세부 정보를 확인할 수 있습니다.
 
 ### Params 변경 사항에 반응하기
 
 매개 변수와 함께 라우트를 사용할 때 주의 해야할 점은 사용자가 `/user/foo`에서 `/user/bar`로 이동할 때 **동일한 컴포넌트 인스턴스가 재사용된다는 것입니다.** 두 라우트 모두 동일한 컴포넌트를 렌더링하므로 이전 인스턴스를 삭제 한 다음 새 인스턴스를 만드는 것보다 효율적입니다. **그러나 이는 또한 컴포넌트의 라이프 사이클 훅이 호출되지 않음을 의미합니다.**
 
-동일한 컴포넌트의 params 변경 사항에 반응하려면 `$route` 객체를 보면됩니다.
+동일한 컴포넌트의 params 변경 사항에 반응하려면 `$bRoute` 객체를 보면됩니다.
 
 ``` js
 const User = {
   template: '...',
   watch: {
-    '$route' (to, from) {
+    '$bRoute' (to, from) {
       // 경로 변경에 반응하여...
     }
   }

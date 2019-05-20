@@ -4,11 +4,11 @@
 
 Die folgenden Eigenschaften werden in jede Child-Komponente injiziert, wenn man die Router-Instanz in die Root-Instanz der App als `router:`-Option übergibt.
 
-- #### $router
+- #### $bRouter
 
   Die Router-Instanz.
 
-- #### $route
+- #### $bRoute
 
   Die aktuell aktive [Route](route-object.md). Diese Eigenschaft ist schreibgeschützt und ihre Eigenschaften sind unveränderbar - aber sie kann überwacht werden.
 

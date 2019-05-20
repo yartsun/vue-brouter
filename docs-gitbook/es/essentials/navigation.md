@@ -4,7 +4,7 @@ Además de utilizar `<router-link>` para crear etiquetas `a` para una navegació
 
 #### `router.push(location, onComplete?, onAbort?)`
 
-**Nota: Dentro de una instancia de Vue, tienes acceso a la instancia del router a través de `$router`. Por lo tanto puedes llamar a `this.$router.push`.**
+**Nota: Dentro de una instancia de Vue, tienes acceso a la instancia del router a través de `$bRouter`. Por lo tanto puedes llamar a `this.$bRouter.push`.**
 
 Para navegar a una URL diferente, utiliza `router.push`. Este método agrega una nueva entrada a la pila del historial, por lo que cuando el usuario presione el botón _volver_ del navegador, será llevado a la URL anterior.
 

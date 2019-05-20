@@ -1,16 +1,16 @@
 # Pasando propiedades a componentes de ruteo
 
-Usar `$route` en tu componente genera un acoplamiento estrecho con la ruta, lo cual limita la flexibilidad del componente dado que solo puede utilizarse en ciertas URL.
+Usar `$bRoute` en tu componente genera un acoplamiento estrecho con la ruta, lo cual limita la flexibilidad del componente dado que solo puede utilizarse en ciertas URL.
 
 Para desacoplar el componente del enrutador utiliza _props_:
 
-** Acoplado a $route**
+** Acoplado a $bRoute**
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -24,7 +24,7 @@ const User = {
   props: ['id'],
   template: '<div>User {{ id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User, props: true },
 
@@ -50,7 +50,7 @@ Cuando _props_ es un objeto, este será asignado tal cual como las _props_ del c
 Útil para cuando las _props_ son estáticas.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
   ]
@@ -63,7 +63,7 @@ Puedes crear una función que retorne _props_.
 Esto te permite convertir los parámetros a otro tipo, combinar valores estáticos con valores basados en rutas, etc.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
   ]

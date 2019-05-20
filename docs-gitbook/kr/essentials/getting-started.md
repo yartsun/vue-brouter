@@ -30,7 +30,7 @@ Vue.js와 vue-router로 단일 페이지 애플리케이션을 만드는 것은 
 ### JavaScript
 
 ``` js
-// 0. 모듈 시스템을 사용하는 경우 (예: vue-cli를 이용해서), Vue 및 VueRouter를 가져온 다음 `Vue.use(VueRouter)`를 호출하십시오.
+// 0. 모듈 시스템을 사용하는 경우 (예: vue-cli를 이용해서), Vue 및 VuebRouter를 가져온 다음 `Vue.use(VuebRouter)`를 호출하십시오.
 
 // 1. 라우트 컴포넌트를 정의하십시오.
 // 다른 파일에서 가져올 수 있습니다.
@@ -49,7 +49,7 @@ const routes = [
 
 // 3. 라우터 인스턴스를 생성하고 `routes` 옵션을 전달하십시오.
 // 여기에 추가 옵션을 전달할 수 있지만, 지금은 간단하게 하겠습니다.
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // routes: routes 의 약어
 })
 

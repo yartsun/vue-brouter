@@ -12,7 +12,7 @@
 
 이 방법을 사용하면 들어오는 컴포넌트를 즉시 탐색하고 렌더링하며 컴포넌트의 `created` 훅에서 데이터를 가져옵니다. 네트워크를 통해 데이터를 가져 오는 동안 로드 상태를 표시 할 수 있는 기회를 제공하며 각 뷰 마다 로드를 다르게 처리 할 수도 있습니다.
 
-`$route.params.id`를 기반으로 한 게시물의 데이터를 가져와야하는 `Post` 컴포넌트가 있다고 가정 해 봅시다 :
+`$bRoute.params.id`를 기반으로 한 게시물의 데이터를 가져와야하는 `Post` 컴포넌트가 있다고 가정 해 봅시다 :
 
 ``` html
 <template>
@@ -48,14 +48,14 @@ export default {
   },
   watch: {
     // 라우트가 변경되면 메소드를 다시 호출됩니다.
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // `getPost`를 데이터 가져오기 위한 유틸리티/API 래퍼로 변경합니다.
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()
@@ -89,14 +89,14 @@ export default {
   },
   watch: {
     // 라우트가 변경되면 메소드를 다시 호출합니다
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // `getPost`를 데이터 페치 유틸리티/API 래퍼로 바꿉니다.
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()

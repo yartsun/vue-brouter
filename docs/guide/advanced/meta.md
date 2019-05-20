@@ -3,7 +3,7 @@
 You can include a `meta` field when defining a route:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',
@@ -27,7 +27,7 @@ First, each route object in the `routes` configuration is called a **route recor
 
 For example, with the above route config, the URL `/foo/bar` will match both the parent route record and the child route record.
 
-All route records matched by a route are exposed on the `$route` object (and also route objects in navigation guards) as the `$route.matched` Array. Therefore, we will need to iterate over `$route.matched` to check for meta fields in route records.
+All route records matched by a route are exposed on the `$bRoute` object (and also route objects in navigation guards) as the `$bRoute.matched` Array. Therefore, we will need to iterate over `$bRoute.matched` to check for meta fields in route records.
 
 An example use case is checking for a meta field in the global navigation guard:
 

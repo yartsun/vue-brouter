@@ -5,7 +5,7 @@
 `routes` 設定でリダイレクトが可能です。`/a` から `/b` へリダイレクトする例:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -15,7 +15,7 @@ const router = new VueRouter({
 名前付きルートに対してリダイレクトすることもできます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -25,7 +25,7 @@ const router = new VueRouter({
 また、function を使った動的なリダイレクトもできます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // この function は対象のルートを引数として受け取ります
@@ -48,7 +48,7 @@ const router = new VueRouter({
 上記はルートの設定で以下のように表現されます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

@@ -27,7 +27,7 @@ import('./Foo.vue') // returns a Promise
 라우트 설정에서 아무것도 바꿀 필요가 없습니다. `Foo`만 사용하면 됩니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/foo', component: Foo }
   ]

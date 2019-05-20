@@ -6,7 +6,7 @@ Ein Redirect bedeutet, dass, wenn der Nutzer `/a` besucht, die URL mit `/b` erse
 
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -16,7 +16,7 @@ const router = new VueRouter({
 Der Redirect kann auch auf eine benannten Route angewandt werden:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -26,7 +26,7 @@ const router = new VueRouter({
 Oder auch mit einer Funktion für dynamische Redirects:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // Die Funktion erhält die Ziel-Route als Argument
@@ -47,7 +47,7 @@ Ein Alias von `/a` als `/b` bedeutet, dass die URL `/b` bleibt, wenn diese besuc
 Dieses kann man in der Router-Konfiguration folgendermaßen definieren:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

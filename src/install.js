@@ -2,7 +2,7 @@ import View from './components/view'
 import Link from './components/link'
 
 export let _Vue
-
+export let proto
 export function install (Vue) {
   if (install.installed && _Vue === Vue) return
   install.installed = true
@@ -17,10 +17,10 @@ export function install (Vue) {
       i(vm, callVal)
     }
   }
-
   Vue.mixin({
     beforeCreate () {
       if (isDef(this.$options.router)) {
+        proto = this
         this._routerRoot = this
         this._router = this.$options.router
         this._router.init(this)
@@ -35,11 +35,11 @@ export function install (Vue) {
     }
   })
 
-  Object.defineProperty(Vue.prototype, '$router', {
+  Object.defineProperty(Vue.prototype, '$bRouter', {
     get () { return this._routerRoot._router }
   })
 
-  Object.defineProperty(Vue.prototype, '$route', {
+  Object.defineProperty(Vue.prototype, '$bRoute', {
     get () { return this._routerRoot._route }
   })
 

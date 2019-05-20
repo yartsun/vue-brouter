@@ -14,7 +14,7 @@
         (authenticated)
       </li>
     </ul>
-    <template v-if="$route.matched.length">
+    <template v-if="$bRoute.matched.length">
       <router-view></router-view>
     </template>
     <template v-else>

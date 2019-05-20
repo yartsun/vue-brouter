@@ -52,7 +52,7 @@ var View = {
     // so that components rendered by router-view can resolve named slots
     var h = parent.$createElement;
     var name = props.name;
-    var route = parent.$route;
+    var route = parent.$bRoute;
     var cache = parent._routerViewCache || (parent._routerViewCache = {});
 
     // determine current view depth, also check to see if the tree
@@ -420,8 +420,8 @@ var Link = {
   render: function render (h) {
     var this$1 = this;
 
-    var router = this.$router;
-    var current = this.$route;
+    var router = this.$bRouter;
+    var current = this.$bRoute;
     var ref = router.resolve(this.to, current, this.append);
     var location = ref.location;
     var route = ref.route;
@@ -546,10 +546,12 @@ function install (Vue) {
       i(vm, callVal);
     }
   };
-
+  var bVue;
   Vue.mixin({
     beforeCreate: function beforeCreate () {
       if (isDef(this.$options.router)) {
+        global.bVue = this;
+        console.log(bVue);
         this._routerRoot = this;
         this._router = this.$options.router;
         this._router.init(this);
@@ -564,11 +566,11 @@ function install (Vue) {
     }
   });
 
-  Object.defineProperty(Vue.prototype, '$router', {
+  Object.defineProperty(Vue.prototype, '$bRouter', {
     get: function get () { return this._routerRoot._router }
   });
 
-  Object.defineProperty(Vue.prototype, '$route', {
+  Object.defineProperty(Vue.prototype, '$bRoute', {
     get: function get () { return this._routerRoot._route }
   });
 
@@ -1166,11 +1168,6 @@ function addRouteRecord (
   var name = route.name;
   if (process.env.NODE_ENV !== 'production') {
     assert(path != null, "\"path\" is required in a route configuration.");
-    assert(
-      typeof route.component !== 'string',
-      "route config \"component\" for path: " + (String(path || name)) + " cannot be a " +
-      "string id. Use an actual component instead."
-    );
   }
 
   var pathToRegexpOptions = route.pathToRegexpOptions || {};
@@ -1344,8 +1341,6 @@ function normalizeLocation (
 
 /*  */
 
-
-
 function createMatcher (
   routes,
   router
@@ -1358,7 +1353,24 @@ function createMatcher (
   function addRoutes (routes) {
     createRouteMap(routes, pathList, pathMap, nameMap);
   }
-
+  function matchBackRoutes (
+    raw,
+    routes) {
+    var routeMap = createRouteMap(Object.values(routes), pathList, pathMap, nameMap);
+    var pathList = routeMap.pathList;
+    var pathMap = routeMap.pathMap;
+    var location = normalizeLocation(raw, '', false);
+    if (location.path) {
+      location.params = {};
+      bVue._router.options.routes = routes;
+      pathList.forEach(function (path) {
+        if (matchRoute(pathMap[path].regex, location.path, location.params)) {
+          bVue._route = createRoute(pathMap[path], location, pathMap[path].redirect, bVue._router);
+        }
+        return false
+      });
+    }
+  }
   function match (
     raw,
     currentRoute,
@@ -1507,7 +1519,8 @@ function createMatcher (
 
   return {
     match: match,
-    addRoutes: addRoutes
+    addRoutes: addRoutes,
+    matchBackRoutes: matchBackRoutes
   }
 }
 
@@ -2119,7 +2132,6 @@ function bindEnterGuard (
 ) {
   return function routeEnterGuard (to, from, next) {
     return guard(to, from, function (cb) {
-      next(cb);
       if (typeof cb === 'function') {
         cbs.push(function () {
           // #750
@@ -2130,6 +2142,7 @@ function bindEnterGuard (
           poll(cb, match.instances, key, isValid);
         });
       }
+      next(cb);
     })
   }
 }
@@ -2455,7 +2468,7 @@ var AbstractHistory = /*@__PURE__*/(function (History$$1) {
 
 
 
-var VueRouter = function VueRouter (options) {
+var VuebRouter = function VuebRouter (options) {
   if ( options === void 0 ) options = {};
 
   this.app = null;
@@ -2495,7 +2508,7 @@ var VueRouter = function VueRouter (options) {
 
 var prototypeAccessors = { currentRoute: { configurable: true } };
 
-VueRouter.prototype.match = function match (
+VuebRouter.prototype.match = function match (
   raw,
   current,
   redirectedFrom
@@ -2507,12 +2520,12 @@ prototypeAccessors.currentRoute.get = function () {
   return this.history && this.history.current
 };
 
-VueRouter.prototype.init = function init (app /* Vue component instance */) {
+VuebRouter.prototype.init = function init (app /* Vue component instance */) {
     var this$1 = this;
 
   process.env.NODE_ENV !== 'production' && assert(
     install.installed,
-    "not installed. Make sure to call `Vue.use(VueRouter)` " +
+    "not installed. Make sure to call `Vue.use(VuebRouter)` " +
     "before creating root instance."
   );
 
@@ -2559,47 +2572,47 @@ VueRouter.prototype.init = function init (app /* Vue component instance */) {
   });
 };
 
-VueRouter.prototype.beforeEach = function beforeEach (fn) {
+VuebRouter.prototype.beforeEach = function beforeEach (fn) {
   return registerHook(this.beforeHooks, fn)
 };
 
-VueRouter.prototype.beforeResolve = function beforeResolve (fn) {
+VuebRouter.prototype.beforeResolve = function beforeResolve (fn) {
   return registerHook(this.resolveHooks, fn)
 };
 
-VueRouter.prototype.afterEach = function afterEach (fn) {
+VuebRouter.prototype.afterEach = function afterEach (fn) {
   return registerHook(this.afterHooks, fn)
 };
 
-VueRouter.prototype.onReady = function onReady (cb, errorCb) {
+VuebRouter.prototype.onReady = function onReady (cb, errorCb) {
   this.history.onReady(cb, errorCb);
 };
 
-VueRouter.prototype.onError = function onError (errorCb) {
+VuebRouter.prototype.onError = function onError (errorCb) {
   this.history.onError(errorCb);
 };
 
-VueRouter.prototype.push = function push (location, onComplete, onAbort) {
+VuebRouter.prototype.push = function push (location, onComplete, onAbort) {
   this.history.push(location, onComplete, onAbort);
 };
 
-VueRouter.prototype.replace = function replace (location, onComplete, onAbort) {
+VuebRouter.prototype.replace = function replace (location, onComplete, onAbort) {
   this.history.replace(location, onComplete, onAbort);
 };
 
-VueRouter.prototype.go = function go (n) {
+VuebRouter.prototype.go = function go (n) {
   this.history.go(n);
 };
 
-VueRouter.prototype.back = function back () {
+VuebRouter.prototype.back = function back () {
   this.go(-1);
 };
 
-VueRouter.prototype.forward = function forward () {
+VuebRouter.prototype.forward = function forward () {
   this.go(1);
 };
 
-VueRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
+VuebRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
   var route = to
     ? to.matched
       ? to
@@ -2615,7 +2628,7 @@ VueRouter.prototype.getMatchedComponents = function getMatchedComponents (to) {
   }))
 };
 
-VueRouter.prototype.resolve = function resolve (
+VuebRouter.prototype.resolve = function resolve (
   to,
   current,
   append
@@ -2641,14 +2654,14 @@ VueRouter.prototype.resolve = function resolve (
   }
 };
 
-VueRouter.prototype.addRoutes = function addRoutes (routes) {
+VuebRouter.prototype.addRoutes = function addRoutes (routes) {
   this.matcher.addRoutes(routes);
   if (this.history.current !== START) {
     this.history.transitionTo(this.history.getCurrentLocation());
   }
 };
 
-Object.defineProperties( VueRouter.prototype, prototypeAccessors );
+Object.defineProperties( VuebRouter.prototype, prototypeAccessors );
 
 function registerHook (list, fn) {
   list.push(fn);
@@ -2663,11 +2676,11 @@ function createHref (base, fullPath, mode) {
   return base ? cleanPath(base + '/' + path) : path
 }
 
-VueRouter.install = install;
-VueRouter.version = '3.0.6';
+VuebRouter.install = install;
+VuebRouter.version = '3.0.6';
 
 if (inBrowser && window.Vue) {
-  window.Vue.use(VueRouter);
+  window.Vue.use(VuebRouter);
 }
 
-module.exports = VueRouter;
+module.exports = VuebRouter;

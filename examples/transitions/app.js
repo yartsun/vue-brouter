@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = {
   template: `
@@ -38,7 +38,7 @@ const Default = { template: '<div class="default">default</div>' }
 const Foo = { template: '<div class="foo">foo</div>' }
 const Bar = { template: '<div class="bar">bar</div>' }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

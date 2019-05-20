@@ -7,7 +7,7 @@ Cuando se utiliza enrutamiento del lado cliente, podemos querer hacer `scroll` h
 Cuando crees una instancia del `router`, puedes incluir la función `scrollBehavior`:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // devolver la posición deseada

@@ -3,7 +3,7 @@
 라우트를 정의 할 때 `meta` 필드를 포함시킬 수 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',
@@ -27,7 +27,7 @@ const router = new VueRouter({
 
 예를 들어, 위의 라우트 구성에서 URL `/foo/bar`는 상위 라우트 레코드와 하위 라우트 레코드 모두와 일치합니다.
 
-라우트와 일치하는 모든 라우트 레코드는 `$route` 객체(그리고 네비게이션 가드의 라우트 객체)에 `$route.matched` 배열로 노출됩니다. 그러므로 우리는 `$route.matched`를 반복하여 라우트 레코드의 메타 필드를 검사 할 필요가 있습니다.
+라우트와 일치하는 모든 라우트 레코드는 `$bRoute` 객체(그리고 네비게이션 가드의 라우트 객체)에 `$bRoute.matched` 배열로 노출됩니다. 그러므로 우리는 `$bRoute.matched`를 반복하여 라우트 레코드의 메타 필드를 검사 할 필요가 있습니다.
 
 예제 사용 사례는 글로벌 네비게이션 가드에서 메타 필드를 확인하는 것입니다.
 

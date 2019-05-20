@@ -30,7 +30,7 @@ Créer une application monopage avec Vue + Vue Router est vraiment simple. Avec 
 ### JavaScript
 
 ``` js
-// 0. Si vous utilisez un système de module (par ex. via vue-cli), il faut importer Vue et Vue Router et ensuite appeler `Vue.use(VueRouter)`.
+// 0. Si vous utilisez un système de module (par ex. via vue-cli), il faut importer Vue et Vue Router et ensuite appeler `Vue.use(VuebRouter)`.
 
 // 1. Définissez les composants de route.
 // Ces derniers peuvent être importés depuis d'autre fichier
@@ -50,7 +50,7 @@ const routes = [
 // 3. Créez l'instance du routeur et passez l'option `routes`.
 // Vous pouvez également passer des options supplémentaires,
 // mais nous allons faire simple pour l'instant.
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // raccourci pour `routes: routes`
 })
 
@@ -64,7 +64,7 @@ const app = new Vue({
 // L'application est maintenant en marche !
 ```
 
-En injectant le routeur, nous y avons accès à travers `this.$router`. Nous avons également accès à la route courante derrière `this.$route` depuis n'importe quel composant :
+En injectant le routeur, nous y avons accès à travers `this.$bRouter`. Nous avons également accès à la route courante derrière `this.$bRoute` depuis n'importe quel composant :
 
 ```js
 // Home.vue
@@ -72,20 +72,20 @@ export default {
   computed: {
     username () {
       // Nous verrons ce que représente `params` dans un instant.
-      return this.$route.params.username
+      return this.$bRoute.params.username
     }
   },
   methods: {
     goBack () {
       window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+        ? this.$bRouter.go(-1)
+        : this.$bRouter.push('/')
     }
   }
 }
 ```
 
-Dans les documentations, nous allons souvent utiliser l'instance `router`. Gardez à l'esprit que l'utilisation de `this.$router` est exactement la même chose que celle de `router`. La raison pour laquelle nous utilisons `this.$router` est la possibilité ainsi offerte de ne pas avoir à importer le routeur dans chaque fichier de composant ayant besoin d'accéder au routage.
+Dans les documentations, nous allons souvent utiliser l'instance `router`. Gardez à l'esprit que l'utilisation de `this.$bRouter` est exactement la même chose que celle de `router`. La raison pour laquelle nous utilisons `this.$bRouter` est la possibilité ainsi offerte de ne pas avoir à importer le routeur dans chaque fichier de composant ayant besoin d'accéder au routage.
 
 Vous pouvez aussi regarder cet [exemple](https://jsfiddle.net/yyx990803/xgrjzsup/).
 

@@ -12,7 +12,7 @@ Techniquement, les deux choix sont valides. Cela dépend de l'expérience utilis
 
 En utilisant cette approche, nous naviguons et faisons immédiatement le rendu du composant et récupérons les données via le hook `created` du composant. Cela nous donne l'opportunité d'afficher un état de chargement pendant que les données sont récupérées à travers le réseau, et nous pouvons aussi gérer le chargement différemment pour chaque vue.
 
-Assumons que nous ayons un composant `Post` qui a besoin de récupérer des données pour un billet identifié par `$route.params.id` :
+Assumons que nous ayons un composant `Post` qui a besoin de récupérer des données pour un billet identifié par `$bRoute.params.id` :
 
 ``` html
 <template>
@@ -49,14 +49,14 @@ export default {
   },
   watch: {
     // appeler encore la méthode si la route change
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // remplacer `getPost` par une fonction de récupération de données
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()

@@ -7,7 +7,7 @@
 При создании экземпляра роутера, вы можете указать функцию `scrollBehavior`:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // здесь нужно вернуть требуемую позицию скролла

@@ -8,7 +8,7 @@ sidebarDepth: 0
 
 ## `router.push(location, onComplete?, onAbort?)`
 
-**注意：在 Vue 实例内部，你可以通过 `$router` 访问路由实例。因此你可以调用 `this.$router.push`。**
+**注意：在 Vue 实例内部，你可以通过 `$bRouter` 访问路由实例。因此你可以调用 `this.$bRouter.push`。**
 
 想要导航到不同的 URL，则使用 `router.push` 方法。这个方法会向 history 栈添加一个新的记录，所以，当用户点击浏览器后退按钮时，则回到之前的 URL。
 

@@ -29,8 +29,8 @@ export default {
     }
   },
   render (h: Function) {
-    const router = this.$router
-    const current = this.$route
+    const router = this.$bRouter
+    const current = this.$bRoute
     const { location, route, href } = router.resolve(this.to, current, this.append)
 
     const classes = {}

@@ -7,7 +7,7 @@ When using client-side routing, we may want to scroll to top when navigating to 
 When creating the router instance, you can provide the `scrollBehavior` function:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // return desired position

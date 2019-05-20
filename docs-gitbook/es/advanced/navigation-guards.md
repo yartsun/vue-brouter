@@ -2,14 +2,14 @@
 
 Como el nombre sugiere, las guardias de navegación provistas por `vue-router` son básicamente utilizadas para proteger rutas de navegación ya sea redireccionando o cancelándolas. Hay varias maneras de engancharse en el proceso de navegación de rutas: globalmente, por ruta o dentro de los componentes.
 
-Recuerda: **Los cambios en los parámetros o las _queries_ no harán que se ejecuten los guardias de navegación**. Simplemente [observa el objeto `$route`](../essentials/dynamic-matching.md#reacting-to-params-changes) para poder reaccionar frente a esos cambios o utiliza el guardia `beforeRouteUpdate` en el componente.
+Recuerda: **Los cambios en los parámetros o las _queries_ no harán que se ejecuten los guardias de navegación**. Simplemente [observa el objeto `$bRoute`](../essentials/dynamic-matching.md#reacting-to-params-changes) para poder reaccionar frente a esos cambios o utiliza el guardia `beforeRouteUpdate` en el componente.
 
 ### Guardias globales
 
 Puedes registrar guardias _before_ globales utilizando `router.beforeEach`:
 
 ``` js
-const router = new VueRouter({ ... })
+const router = new VuebRouter({ ... })
 
 router.beforeEach((to, from, next) => {
   // ...
@@ -57,7 +57,7 @@ router.afterEach((to, from) => {
 Puedes definir guardias `beforeEnter` directamente en el objeto de configuración de una ruta:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/foo',

@@ -1,8 +1,8 @@
 {
-  "name": "vue-router",
-  "version": "3.0.6",
-  "description": "Official router for Vue.js 2",
-  "author": "Evan You",
+  "name": "vue-bRouter",
+  "version": "1.0.6",
+  "description": "unofficial router for Vue.js 2 with backend Routes",
+  "author": "Bogdan Yartsun",
   "license": "MIT",
   "main": "dist/vue-router.common.js",
   "module": "dist/vue-router.esm.js",
@@ -11,7 +11,7 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/vuejs/vue-router.git"
+    "url": "https://github.com/yartsun/vue-brouter.git"
   },
   "typings": "types/index.d.ts",
   "files": [
@@ -96,5 +96,8 @@
   "bugs": {
     "url": "https://github.com/vuejs/vue-router/issues"
   },
-  "homepage": "https://github.com/vuejs/vue-router#readme"
+  "homepage": "https://github.com/yartsun/vue-brouter#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
 }

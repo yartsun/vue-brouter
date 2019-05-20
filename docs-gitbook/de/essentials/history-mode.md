@@ -5,7 +5,7 @@ Der Standardmodus für `vue-router` ist der _Hash-Modus_. Er nutzt den URL-Hash,
 Um ohne Hash zu arbeiten, nutzt man den **Verlaufsmodus**, welcher die `history.pushState`-API von HTML5 nutzt, um URL-Navigation ohne Reload zu erreichen:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -49,7 +49,7 @@ Für Node.js/Express benutz du am besten [connect-history-api-fallback middlewar
 Es gibt einen kleinen Nachteil: Der Server wird  keine 404-Fehler mehr melden, da alle nicht gefundenen Pfade zur `index.html` führen. Um das zu beheben, solltest du eine Sammel-Route in der Vue-App für die 404-Seite definieren.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

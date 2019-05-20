@@ -25,10 +25,10 @@
 
 ``` js
 const User = {
-  template: '<div>Пользователь {{ $route.params.id }}</div>'
+  template: '<div>Пользователь {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -41,17 +41,17 @@ const router = new VueRouter({
 const User = {
   template: `
     <div class="user">
-      <h2>Пользователь {{ $route.params.id }}</h2>
+      <h2>Пользователь {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
 }
 ```
 
-Для отображения компонентов в этой вложенной точке, нам понадобится опция `children` в конфигурации конструктора `VueRouter`:
+Для отображения компонентов в этой вложенной точке, нам понадобится опция `children` в конфигурации конструктора `VuebRouter`:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User,
       children: [
@@ -80,7 +80,7 @@ const router = new VueRouter({
 С текущим кодом, если перейти по пути `/user/foo`, внутри компонента `User` ничего отображено не будет, так как не произойдёт совпадения по второй части пути. Может быть, что-то в таких случаях отобразить всё же захочется — тогда стоит указать пустой путь:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:id', component: User,

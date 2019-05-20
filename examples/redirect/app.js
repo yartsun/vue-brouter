@@ -1,18 +1,18 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<router-view></router-view>' }
 const Default = { template: '<div>default</div>' }
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
 const Baz = { template: '<div>baz</div>' }
-const WithParams = { template: '<div>{{ $route.params.id }}</div>' }
+const WithParams = { template: '<div>{{ $bRoute.params.id }}</div>' }
 const Foobar = { template: '<div>foobar</div>' }
 const FooBar = { template: '<div>FooBar</div>' }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

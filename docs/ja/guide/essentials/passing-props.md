@@ -1,16 +1,16 @@
 # ルートコンポーネントにプロパティを渡す
 
-コンポーネントで `$route` を使うとコンポーネントとルートの間に密結合が生まれ、コンポーネントが特定のURLでしか使用できないなど柔軟性が制限されます。
+コンポーネントで `$bRoute` を使うとコンポーネントとルートの間に密結合が生まれ、コンポーネントが特定のURLでしか使用できないなど柔軟性が制限されます。
 
 コンポーネントをルーターから分離するために `props` オプションを使います:
 
-**`$route` に結合**
+**`$bRoute` に結合**
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -24,7 +24,7 @@ const User = {
   props: ['id'],
   template: '<div>User {{ id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User, props: true },
 
@@ -49,7 +49,7 @@ const router = new VueRouter({
 `props` がオブジェクトの場合、これはコンポーネントプロパティとしてそのまま設定されます。プロパティが静的なときに便利です。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
   ]
@@ -61,7 +61,7 @@ const router = new VueRouter({
 プロパティを返す関数を作成することができます。これにより、パラメータを他のタイプにキャストし、静的な値をルートベースの値などと組み合わせることができます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
   ]

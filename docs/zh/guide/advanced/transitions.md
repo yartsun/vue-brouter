@@ -45,9 +45,9 @@ const Bar = {
 
 ``` js
 // 接着在父组件内
-// watch $route 决定使用哪种过渡
+// watch $bRoute 决定使用哪种过渡
 watch: {
-  '$route' (to, from) {
+  '$bRoute' (to, from) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'

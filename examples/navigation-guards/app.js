@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<div>home</div>' }
 const Foo = { template: '<div>foo</div>' }
@@ -83,7 +83,7 @@ const Quux = {
       prevId: 0
     }
   },
-  template: `<div>id:{{ $route.params.id }} prevId:{{ prevId }}</div>`,
+  template: `<div>id:{{ $bRoute.params.id }} prevId:{{ prevId }}</div>`,
   beforeRouteUpdate (to, from, next) {
     this.prevId = from.params.id
     next()
@@ -127,7 +127,7 @@ const NestedChild = {
   }
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

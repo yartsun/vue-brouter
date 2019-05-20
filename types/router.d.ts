@@ -13,7 +13,7 @@ export type NavigationGuard<V extends Vue = Vue> = (
   next: (to?: RawLocation | false | ((vm: V) => any) | void) => void
 ) => any
 
-export declare class VueRouter {
+export declare class VuebRouter {
   constructor (options?: RouterOptions);
 
   app: Vue;

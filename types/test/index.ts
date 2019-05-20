@@ -1,9 +1,9 @@
 import Vue, { ComponentOptions, AsyncComponent } from "vue";
 
-import VueRouter from "../index";
+import VuebRouter from "../index";
 import { Route, RouteRecord, RedirectOption } from "../index";
 
-Vue.use(VueRouter);
+Vue.use(VuebRouter);
 
 const Home = { template: "<div>home</div>" };
 const Foo = { template: "<div>foo</div>" };
@@ -18,7 +18,7 @@ const Hook: ComponentOptions<Vue> = {
     next("/");
     next({ path: "/" });
     next(vm => {
-      vm.$router;
+      vm.$bRouter;
     });
   },
 
@@ -37,7 +37,7 @@ const Hook: ComponentOptions<Vue> = {
   }
 };
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: "history",
   base: "/",
   fallback: false,
@@ -188,5 +188,5 @@ const vm = new Vue({
   `
 }).$mount("#app");
 
-vm.$router.push("/");
-vm.$route.params;
+vm.$bRouter.push("/");
+vm.$bRoute.params;
