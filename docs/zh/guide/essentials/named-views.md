@@ -11,7 +11,7 @@
 一个视图使用一个组件渲染，因此对于同个路由，多个视图就需要多个组件。确保正确使用 `components` 配置 (带上 s)：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

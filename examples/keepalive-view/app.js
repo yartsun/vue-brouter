@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Wrap = { template: '<div>child: <router-view></router-view></div>' }
 
@@ -13,7 +13,7 @@ const Index = {
 }
 
 const WithGuard = {
-  template: '<div>{{ $route.name }}: {{ n }}</div>',
+  template: '<div>{{ $bRoute.name }}: {{ n }}</div>',
   data: () => ({ n: 0 }),
   beforeRouteEnter (to, from, next) {
     next(vm => {
@@ -27,7 +27,7 @@ const IndexChild2 = { template: '<div>index child2</div>' }
 
 const Home = { template: '<div>home</div>' }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

@@ -3,7 +3,7 @@
 しばしば、名前を使ってルートを特定できるとより便利です。特にルートにリンクするときやナビゲーションを実行するときなどです。Router インスタンスを作成するときに `routes` オプションの中でルートに名前を付けることができます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:userId',

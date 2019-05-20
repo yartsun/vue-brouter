@@ -25,9 +25,9 @@ Lorsqu'il est utilisé avec un système de module, vous devez explicitement inst
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 Vous n'avez pas besoin de faire cela lors de l'utilisation des balises de script globales (`<script>`).

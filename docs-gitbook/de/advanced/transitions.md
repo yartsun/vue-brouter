@@ -44,10 +44,10 @@ Es ist auch möglich, den Übergang dynamisch anhand der Beziehung zwischen Ziel
 ```
 
 ``` js
-// überwache $route in der Parent-Komponente,
+// überwache $bRoute in der Parent-Komponente,
 // um den Übergang festzulegen
 watch: {
-  '$route' (to, from) {
+  '$bRoute' (to, from) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'

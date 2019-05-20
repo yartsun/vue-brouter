@@ -3,7 +3,7 @@
 Manchmal ist es einfacher, eine Route mit einem Namen anzusprechen. Besonders bei Links zu einer Route oder dem Ausführen von Navigationen. Den Namen vergibt man beim Erzeugen der Router-Instanz in den `routes`-Optionen:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:userId',

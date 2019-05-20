@@ -25,10 +25,10 @@
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -41,17 +41,17 @@ const router = new VueRouter({
 const User = {
   template: `
     <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
+      <h2>User {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
 }
 ```
 
-このネストされたアウトレットに対してコンポーネントを描画するためには、 `VueRouter` のコンストラクタの設定で `children` オプションを使用する必要があります。
+このネストされたアウトレットに対してコンポーネントを描画するためには、 `VuebRouter` のコンストラクタの設定で `children` オプションを使用する必要があります。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User,
       children: [
@@ -79,7 +79,7 @@ const router = new VueRouter({
 ここまでの点では、上記の設定で `/user/foo` に訪れた時に `User` アウトレット内部で何も描画されません。なぜならば、サブルートにマッチしていないからです。そこに何か描画したい場合は、空のサブルートパスを設定できます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:id', component: User,

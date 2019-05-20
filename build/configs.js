@@ -65,7 +65,7 @@ function genConfig (opts) {
       file: opts.file,
       format: opts.format,
       banner,
-      name: 'VueRouter'
+      name: 'VuebRouter'
     }
   }
 

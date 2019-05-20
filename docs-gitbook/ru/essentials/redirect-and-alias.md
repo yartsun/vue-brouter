@@ -5,7 +5,7 @@
 Редиректы также определяются в конфигурации путей `routes`. Для редиректа с `/a` на `/b`, укажите:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -15,7 +15,7 @@ const router = new VueRouter({
 В качестве цели редиректа можно использовать и именованный путь:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -25,7 +25,7 @@ const router = new VueRouter({
 Можно даже указать функцию для организации динамического редиректа:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // в функцию в качестве аргумента передаётся путь
@@ -48,7 +48,7 @@ const router = new VueRouter({
 В виде конфигурации роутера вышесказанное может быть выражено так:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

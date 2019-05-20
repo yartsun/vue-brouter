@@ -7,7 +7,7 @@ const User = {
   template: '<div>User</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     // 动态路径参数 以冒号开头
     { path: '/user/:id', component: User }
@@ -18,36 +18,36 @@ const router = new VueRouter({
 现在呢，像 `/user/foo` 和 `/user/bar` 都将映射到相同的路由。
 
 一个“路径参数”使用冒号 `:` 标记。当匹配到一个路由时，参数值会被设置到
-`this.$route.params`，可以在每个组件内使用。于是，我们可以更新 `User` 的模板，输出当前用户的 ID：
+`this.$bRoute.params`，可以在每个组件内使用。于是，我们可以更新 `User` 的模板，输出当前用户的 ID：
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 ```
 
 你可以看看这个[在线例子](https://jsfiddle.net/yyx990803/4xfa2f19/)。
 
-你可以在一个路由中设置多段“路径参数”，对应的值都会设置到 `$route.params` 中。例如：
+你可以在一个路由中设置多段“路径参数”，对应的值都会设置到 `$bRoute.params` 中。例如：
 
-| 模式 | 匹配路径 | $route.params |
+| 模式 | 匹配路径 | $bRoute.params |
 |---------|------|--------|
 | /user/:username | /user/evan | `{ username: 'evan' }` |
 | /user/:username/post/:post_id | /user/evan/post/123 | `{ username: 'evan', post_id: '123' }` |
 
-除了 `$route.params` 外，`$route` 对象还提供了其它有用的信息，例如，`$route.query` (如果 URL 中有查询参数)、`$route.hash` 等等。你可以查看 [API 文档](../../api/#路由对象) 的详细说明。
+除了 `$bRoute.params` 外，`$bRoute` 对象还提供了其它有用的信息，例如，`$bRoute.query` (如果 URL 中有查询参数)、`$bRoute.hash` 等等。你可以查看 [API 文档](../../api/#路由对象) 的详细说明。
 
 ## 响应路由参数的变化
 
 提醒一下，当使用路由参数时，例如从 `/user/foo` 导航到 `/user/bar`，**原来的组件实例会被复用**。因为两个路由都渲染同个组件，比起销毁再创建，复用则显得更加高效。**不过，这也意味着组件的生命周期钩子不会再被调用**。
 
-复用组件时，想对路由参数的变化作出响应的话，你可以简单地 watch (监测变化) `$route` 对象：
+复用组件时，想对路由参数的变化作出响应的话，你可以简单地 watch (监测变化) `$bRoute` 对象：
 
 ``` js
 const User = {
   template: '...',
   watch: {
-    '$route' (to, from) {
+    '$bRoute' (to, from) {
       // 对路由变化作出响应...
     }
   }
@@ -83,15 +83,15 @@ const User = {
 
 当使用*通配符*路由时，请确保路由的顺序是正确的，也就是说含有*通配符*的路由应该放在最后。路由 `{ path: '*' }` 通常用于客户端 404 错误。如果你使用了*History 模式*，请确保[正确配置你的服务器](./history-mode.md)。
 
-当使用一个*通配符*时，`$route.params` 内会自动添加一个名为 `pathMatch` 参数。它包含了 URL 通过*通配符*被匹配的部分：
+当使用一个*通配符*时，`$bRoute.params` 内会自动添加一个名为 `pathMatch` 参数。它包含了 URL 通过*通配符*被匹配的部分：
 
 ```js
 // 给出一个路由 { path: '/user-*' }
-this.$router.push('/user-admin')
-this.$route.params.pathMatch // 'admin'
+this.$bRouter.push('/user-admin')
+this.$bRoute.params.pathMatch // 'admin'
 // 给出一个路由 { path: '*' }
-this.$router.push('/non-existing')
-this.$route.params.pathMatch // '/non-existing'
+this.$bRouter.push('/non-existing')
+this.$bRoute.params.pathMatch // '/non-existing'
 ```
 
 ## 高级匹配模式

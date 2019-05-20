@@ -45,9 +45,9 @@ Il est aussi possible de déterminer la transition à utiliser en se basant sur 
 
 ``` js
 // et dans le composant parent,
-// observer la `$route` pour déterminer la transition à utiliser
+// observer la `$bRoute` pour déterminer la transition à utiliser
 watch: {
-  '$route' (to, from) {
+  '$bRoute' (to, from) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'

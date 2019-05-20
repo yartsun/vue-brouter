@@ -25,10 +25,10 @@ Given the app we created in the last chapter:
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -41,17 +41,17 @@ The `<router-view>` here is a top-level outlet. It renders the component matched
 const User = {
   template: `
     <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
+      <h2>User {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
 }
 ```
 
-To render components into this nested outlet, we need to use the `children` option in `VueRouter` constructor config:
+To render components into this nested outlet, we need to use the `children` option in `VuebRouter` constructor config:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User,
       children: [
@@ -80,7 +80,7 @@ As you can see the `children` option is just another Array of route configuratio
 At this point, with the above configuration, when you visit `/user/foo`, nothing will be rendered inside `User`'s outlet, because no sub route is matched. Maybe you do want to render something there. In such case you can provide an empty subroute path:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:id', component: User,

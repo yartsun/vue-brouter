@@ -44,9 +44,9 @@ const Bar = {
 ```
 
 ``` js
-// 그런 다음 부모 구성 요소에서 `$route`를 보고 사용할 트랜지션을 결정합니다
+// 그런 다음 부모 구성 요소에서 `$bRoute`를 보고 사용할 트랜지션을 결정합니다
 watch: {
-  '$route' (to, from) {
+  '$bRoute' (to, from) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'

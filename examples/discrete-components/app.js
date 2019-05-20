@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
 // 1. Use plugin.
 // This installs <router-view> and <router-link>,
-// and injects $router and $route to all router-enabled child components
-Vue.use(VueRouter)
+// and injects $bRouter and $bRoute to all router-enabled child components
+Vue.use(VuebRouter)
 
 // 2. Define route components
 const Home = { template: '<div>Component: home</div>' }
@@ -12,7 +12,7 @@ const Foo = { template: '<div>Component: foo</div>' }
 const Bar = { template: '<div>Component: bar</div>' }
 
 // 3. Create the router
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

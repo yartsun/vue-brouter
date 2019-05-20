@@ -7,7 +7,7 @@
 При создании экземпляра маршрутизатора, вы можете указать функцию `scrollBehavior`:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // возвращаем требуемую позицию прокрутки

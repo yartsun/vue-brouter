@@ -7,7 +7,7 @@ const User = {
   template: '<div>User</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     // コロンで始まる動的セグメント
     { path: '/user/:id', component: User }
@@ -17,36 +17,36 @@ const router = new VueRouter({
 
 これで `/user/foo` や `/user/bar` などの URL 両方とも同じルートにマッチします。
 
-動的セグメントはコロン `:` を使って表されます。ルートがマッチした時、この動的セグメントの値は全てのコンポーネント内で `this.$route.params` として利用可能になります。したがって、現在の `User` のテンプレートを次のように更新することで現在のユーザー ID を表示することができます。
+動的セグメントはコロン `:` を使って表されます。ルートがマッチした時、この動的セグメントの値は全てのコンポーネント内で `this.$bRoute.params` として利用可能になります。したがって、現在の `User` のテンプレートを次のように更新することで現在のユーザー ID を表示することができます。
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 ```
 
 [こちら](https://jsfiddle.net/yyx990803/4xfa2f19/) のデモの例も確認してみてください。
 
-1 つのルートが複数の動的なセグメントを持つこともできます。そして、それらは `$route.params` の一致したフィールドとマップされます。例:
+1 つのルートが複数の動的なセグメントを持つこともできます。そして、それらは `$bRoute.params` の一致したフィールドとマップされます。例:
 
-| パターン | マッチしたパス | $route.params |
+| パターン | マッチしたパス | $bRoute.params |
 |---------|------|--------|
 | /user/:username | /user/evan | `{ username: 'evan' }` |
 | /user/:username/post/:post_id | /user/evan/post/123 | `{ username: 'evan', post_id: '123' }` |
 
-`$route.params` に加えて、`$route` オブジェクトでは `$route.query` (もし URL 上にクエリがあるなら) や `$route.hash` など便利な情報も利用可能です。それらの詳細については [API リファレンス](../../api/#the-route-object) でご確認ください。
+`$bRoute.params` に加えて、`$bRoute` オブジェクトでは `$bRoute.query` (もし URL 上にクエリがあるなら) や `$bRoute.hash` など便利な情報も利用可能です。それらの詳細については [API リファレンス](../../api/#the-route-object) でご確認ください。
 
 ## パラメーター変更の検知
 
 ルートのパラメーターを使う際に特筆すべき点は、ユーザーが `/user/foo` から `/user/bar` へ遷移するときに**同じコンポーネントインスタンスが再利用される**ということです。 両方のルートが同じコンポーネントを描画するため、古いインスタンスを破棄して新しいものを生成するよりも効率的です。**しかしながら、これはコンポーネントのライフサイクルフックが呼ばれないことを意味しています。**
 
-同じコンポーネントでパラメーター変更を検知するためには、 `$route` オブジェクトを watch するだけです。
+同じコンポーネントでパラメーター変更を検知するためには、 `$bRoute` オブジェクトを watch するだけです。
 
 ``` js
 const User = {
   template: '...',
   watch: {
-    '$route' (to, from) {
+    '$bRoute' (to, from) {
       // ルートの変更の検知...
     }
   }
@@ -83,15 +83,15 @@ const User = {
 _アスタリスク_ ルートを使用するときは、_アスタリスク_ ルートが最後になるようにルートを正しく順序付けてください。
 `{ path: '*' }` ルートは、通常クライアントサイドの404ページで使われます。_History モード_ を使用する場合は、[正しいサーバの設定](./history-mode.md)も同様にしっかりしてください。
 
-_アスタリスク_ を使用するときは、 `pathMatch` と名付けられたパラメータは、自動的に `$route.params` に追加されます。_アスタリスク_ によってマッチされた url の残りを含みます:
+_アスタリスク_ を使用するときは、 `pathMatch` と名付けられたパラメータは、自動的に `$bRoute.params` に追加されます。_アスタリスク_ によってマッチされた url の残りを含みます:
 
 ```js
 // { path: '/user-*' } というルートが与えられた
-this.$router.push('/user-admin')
-this.$route.params.pathMatch // 'admin'
+this.$bRouter.push('/user-admin')
+this.$bRoute.params.pathMatch // 'admin'
 // { path: '*' } というルートが与えられた
-this.$router.push('/non-existing')
-this.$route.params.pathMatch // '/non-existing'
+this.$bRouter.push('/non-existing')
+this.$bRoute.params.pathMatch // '/non-existing'
 ```
 
 ## 高度なマッチングパターン

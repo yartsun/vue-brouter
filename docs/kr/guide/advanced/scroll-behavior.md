@@ -7,7 +7,7 @@
 라우터 인스턴스를 생성 할 때 `scrollBehavior` 함수를 제공 할 수 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // 원하는 위치로 돌아가기

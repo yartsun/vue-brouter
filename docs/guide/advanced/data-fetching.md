@@ -12,7 +12,7 @@ Technically, both are valid choices - it ultimately depends on the user experien
 
 When using this approach, we navigate and render the incoming component immediately, and fetch data in the component's `created` hook. It gives us the opportunity to display a loading state while the data is being fetched over the network, and we can also handle loading differently for each view.
 
-Let's assume we have a `Post` component that needs to fetch the data for a post based on `$route.params.id`:
+Let's assume we have a `Post` component that needs to fetch the data for a post based on `$bRoute.params.id`:
 
 ``` html
 <template>
@@ -49,14 +49,14 @@ export default {
   },
   watch: {
     // call again the method if the route changes
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // replace `getPost` with your data fetching util / API wrapper
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()

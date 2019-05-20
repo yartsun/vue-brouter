@@ -25,9 +25,9 @@ npm install vue-router
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 전역 스크립트 태그를 사용할 때는 이 작업을 하지 않아도 됩니다.

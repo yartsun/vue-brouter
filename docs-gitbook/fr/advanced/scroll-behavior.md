@@ -7,7 +7,7 @@ En utilisant le routage côté client, nous pourrions vouloir faire défiler la 
 Pendant la création de l'instance du routeur, vous pouvez renseigner la fonction `scrollBehavior` :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // retourner la position désirée

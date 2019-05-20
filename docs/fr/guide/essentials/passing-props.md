@@ -1,16 +1,16 @@
 # Passage de props aux composants de route
 
-Utiliser `$route` dans vos composants crée un couplage fort à la route qui va limiter la flexibilité du composant qui ne pourra être utilisé que par certains URL.
+Utiliser `$bRoute` dans vos composants crée un couplage fort à la route qui va limiter la flexibilité du composant qui ne pourra être utilisé que par certains URL.
 
 Pour découpler un composant de son routeur, utilisez les props :
 
-**Plutôt que de coupler avec `$route`**
+**Plutôt que de coupler avec `$bRoute`**
 
 ``` js
 const User = {
-  template: '<div>Utilisateur {{ $route.params.id }}</div>'
+  template: '<div>Utilisateur {{ $bRoute.params.id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/utilisateur/:id', component: User }
   ]
@@ -24,7 +24,7 @@ const User = {
   props: ['id'],
   template: '<div>Utilisateur {{ id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/utilisateur/:id', component: User, props: true },
 
@@ -49,7 +49,7 @@ Quand `props` est mis à `true`, le `route.params` est remplis en tant que props
 Quand `props` est un objet, cela alimente les props de celui-ci. Utile quand les props sont statiques.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
   ]
@@ -61,7 +61,7 @@ const router = new VueRouter({
 Vous pouvez créer une fonction qui va retourner les props. Cela vous permet de caster des paramètres dans un autre type, de combiner les valeurs statiques avec les valeurs des routes, etc.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
   ]

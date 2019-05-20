@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 // The matching uses path-to-regexp, which is the matching engine used
 // by express as well, so the same matching rules apply.
 // For detailed rules, see https://github.com/pillarjs/path-to-regexp
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [
@@ -43,7 +43,7 @@ new Vue({
         <li><router-link to="/optional-group/foo/bar">/optional-group/foo/bar</router-link></li>
       </ul>
       <p>Route context</p>
-      <pre>{{ JSON.stringify($route, null, 2) }}</pre>
+      <pre>{{ JSON.stringify($bRoute, null, 2) }}</pre>
     </div>
   `
 }).$mount('#app')

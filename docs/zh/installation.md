@@ -25,9 +25,9 @@ npm install vue-router
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 如果使用全局的 script 标签，则无须如此 (手动安装)。

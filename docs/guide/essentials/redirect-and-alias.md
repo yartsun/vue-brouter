@@ -5,7 +5,7 @@
 Redirecting is also done in the `routes` configuration. To redirect from `/a` to `/b`:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -15,7 +15,7 @@ const router = new VueRouter({
 The redirect can also be targeting a named route:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -25,7 +25,7 @@ const router = new VueRouter({
 Or even use a function for dynamic redirecting:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // the function receives the target route as the argument
@@ -48,7 +48,7 @@ A redirect means when the user visits `/a`, the URL will be replaced by `/b`, an
 The above can be expressed in the route configuration as:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

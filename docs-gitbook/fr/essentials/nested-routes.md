@@ -25,10 +25,10 @@ Reprenons l'application créée au chapitre précédent :
 
 ``` js
 const User = {
-  template: '<div>Utilisateur {{ $route.params.id }}</div>'
+  template: '<div>Utilisateur {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/utilisateur/:id', component: User }
   ]
@@ -41,17 +41,17 @@ Ici le `<router-view>` est une balise de premier niveau. Il fait le rendu des co
 const User = {
   template: `
     <div class="user">
-      <h2>Utilisateur {{ $route.params.id }}</h2>
+      <h2>Utilisateur {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
 }
 ```
 
-Pour faire le rendu de composants à l'intérieur des balises imbriquées, nous avons besoin d'utiliser l'option `children` dans la configuration du constructeur de `VueRouter` :
+Pour faire le rendu de composants à l'intérieur des balises imbriquées, nous avons besoin d'utiliser l'option `children` dans la configuration du constructeur de `VuebRouter` :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/utilisateur/:id', component: User,
       children: [
@@ -80,7 +80,7 @@ Comme vous pouvez le voir, l'option `children` n'est qu'un autre tableau d'objet
 À ce niveau, avec la configuration ci-dessus, quand vous visitez `/utilisateur/foo`, rien ne sera rendu dans la partie `User`, car aucune sous route ne concorde. Peut-être voudriez-vous afficher quelque chose ici. Dans ce cas, vous pouvez fournir une sous route vide :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/utilisateur/:id', component: User,

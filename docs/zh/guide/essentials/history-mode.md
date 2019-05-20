@@ -5,7 +5,7 @@
 如果不想要很丑的 hash，我们可以用路由的 **history 模式**，这种模式充分利用 `history.pushState` API 来完成 URL 跳转而无须重新加载页面。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -127,7 +127,7 @@ rewrite {
 给个警告，因为这么做以后，你的服务器就不再返回 404 错误页面，因为对于所有路径都会返回 `index.html` 文件。为了避免这种情况，你应该在 Vue 应用里面覆盖所有的路由情况，然后在给出一个 404 页面。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

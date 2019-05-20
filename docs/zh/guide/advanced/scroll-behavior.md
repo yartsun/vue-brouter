@@ -7,7 +7,7 @@
 当创建一个 Router 实例，你可以提供一个 `scrollBehavior` 方法：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // return 期望滚动到哪个的位置

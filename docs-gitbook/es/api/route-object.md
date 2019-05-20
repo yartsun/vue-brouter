@@ -6,9 +6,9 @@ El objeto `Route` es inmutable. Cada navegación exitosa resultará en un nuevo 
 
 El objeto `Route` puede encontrarse en diferentes lugares.
 
-- Dentro de los componentes, como `this.$route`
+- Dentro de los componentes, como `this.$bRoute`
 
-- Dentro de las _funciones callbacks_ de observación de `$route`
+- Dentro de las _funciones callbacks_ de observación de `$bRoute`
 
 - Como valor de retorno de la función `router.match(location)`
 
@@ -23,7 +23,7 @@ El objeto `Route` puede encontrarse en diferentes lugares.
 - Dentro de la función `scrollBehavior`como los primeros dos argumentos:
 
   ``` js
-  const router = new VueRouter({
+  const router = new VuebRouter({
     scrollBehavior (to, from, savedPosition) {
       // to y from son objetos de ruta
     }
@@ -32,44 +32,44 @@ El objeto `Route` puede encontrarse en diferentes lugares.
 
 ### Propiedades del objeto Route
 
-- **$route.path**
+- **$bRoute.path**
 
   - tipo: `string`
 
     Una cadena de texto equivalente a la ruta actual, siempre resuelta como una ruta absoluta. Por ejemplo`"/foo/bar"`.
 
-- **$route.params**
+- **$bRoute.params**
 
   - tipo: `Object`
 
     Un objeto que contiene pares llave/valor de segmentos dinámicos y segmentos estrella. Si no hay parametros, el valor será un objeto vacio.
 
-- **$route.query**
+- **$bRoute.query**
 
   - tipo: `Object`
 
-    Un objeto que contiene pares llave/valor del _query string_. Por ejemplo, para la ruta `/foo?user=1`, obtendremos `$route.query.user == 1`. Si no hay _query string_ el valor será un objeto vacio.
+    Un objeto que contiene pares llave/valor del _query string_. Por ejemplo, para la ruta `/foo?user=1`, obtendremos `$bRoute.query.user == 1`. Si no hay _query string_ el valor será un objeto vacio.
 
-- **$route.hash**
+- **$bRoute.hash**
 
   - tipo: `string`
 
     El _hash_ de la ruta actual (con la `#`), si posee. Si no hay un _hash_ el valor será una cadena de texto vacia.
 
-- **$route.fullPath**
+- **$bRoute.fullPath**
 
   - tipo: `string`
 
     La URL completa incluyendo _query_ y _hash_.
 
-- **$route.matched**
+- **$bRoute.matched**
 
   - tipo: `Array<RouteRecord>`
 
   Un array que contiene **registros de ruta** para todos los segmentos anidados de la ruta actual. Los registros de ruta son copias de los objetos en el array de configuración `routes` (y en los arrays `children`):
 
   ``` js
-  const router = new VueRouter({
+  const router = new VuebRouter({
     routes: [
       // el siguiente objeto es un registro de ruta
       { path: '/foo', component: Foo,
@@ -82,8 +82,8 @@ El objeto `Route` puede encontrarse en diferentes lugares.
   })
   ```
 
-  Cuando la URL es `/foo/bar`, `$route.matched` será un array que contendrá ambos objetos (clonados), en orden descendente de padre a hijo.
+  Cuando la URL es `/foo/bar`, `$bRoute.matched` será un array que contendrá ambos objetos (clonados), en orden descendente de padre a hijo.
 
-- **$route.name**
+- **$bRoute.name**
 
   El nombre de la ruta acutal, si tiene. (Más información en [rutas con nombre](../essentials/named-routes.md))

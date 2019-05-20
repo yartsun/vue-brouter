@@ -15,7 +15,7 @@ import { AbstractHistory } from './history/abstract'
 
 import type { Matcher } from './create-matcher'
 
-export default class VueRouter {
+export default class VuebRouter {
   static install: () => void;
   static version: string;
 
@@ -83,7 +83,7 @@ export default class VueRouter {
   init (app: any /* Vue component instance */) {
     process.env.NODE_ENV !== 'production' && assert(
       install.installed,
-      `not installed. Make sure to call \`Vue.use(VueRouter)\` ` +
+      `not installed. Make sure to call \`Vue.use(VuebRouter)\` ` +
       `before creating root instance.`
     )
 
@@ -240,9 +240,9 @@ function createHref (base: string, fullPath: string, mode) {
   return base ? cleanPath(base + '/' + path) : path
 }
 
-VueRouter.install = install
-VueRouter.version = '__VERSION__'
+VuebRouter.install = install
+VuebRouter.version = '__VERSION__'
 
 if (inBrowser && window.Vue) {
-  window.Vue.use(VueRouter)
+  window.Vue.use(VuebRouter)
 }

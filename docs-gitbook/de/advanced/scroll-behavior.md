@@ -7,7 +7,7 @@ Oft wollen wir, dass die Seite nach oben scrollt, wenn zu einer neuen Route navi
 Beim Erzeugen der Router-Instanz fügt man die `scrollBehavior`-Funktion hinzu:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // zurückgeben der gewünschten Position

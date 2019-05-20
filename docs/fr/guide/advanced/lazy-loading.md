@@ -29,7 +29,7 @@ const Foo = () => import('./Foo.vue')
 Rien n'a besoin d'être modifié dans la configuration de la route, utilisez `Foo` comme d'habitude.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/foo', component: Foo }
   ]

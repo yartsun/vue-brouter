@@ -12,7 +12,7 @@ A view is rendered by using a component, therefore multiple views require multip
 an s) option:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

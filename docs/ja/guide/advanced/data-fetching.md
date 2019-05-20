@@ -12,7 +12,7 @@
 
 このアプローチを取る時は次に来るコンポーネントが即座にナビゲーションされ、描画されます。そして、コンポーネントの `created` フックの中でデータを取得します。この方法ではネットワーク越しにデータを取得している間にローディング状態を表示する機会があります。また、各 view に対して、異なるローディングの対応をすることもできます。
 
-`$route.params.id` を元にポストのデータを取得する必要がある `Post` コンポーネントを想定してみましょう。
+`$bRoute.params.id` を元にポストのデータを取得する必要がある `Post` コンポーネントを想定してみましょう。
 
 ``` html
 <template>
@@ -49,14 +49,14 @@ export default {
   },
   watch: {
     // ルートが変更されたらこのメソッドを再び呼び出します
-    '$route': 'fetchData'
+    '$bRoute': 'fetchData'
   },
   methods: {
     fetchData () {
       this.error = this.post = null
       this.loading = true
       // `getPost` をあなたのデータ取得用 util や API ラッパーに置き換えてください
-      getPost(this.$route.params.id, (err, post) => {
+      getPost(this.$bRoute.params.id, (err, post) => {
         this.loading = false
         if (err) {
           this.error = err.toString()

@@ -11,7 +11,7 @@ A veces es necesario mostrar múltiples vistas al mismo tiempo en lugar de anida
 Una vista se renderiza utilizando un componente, por lo tanto, múltiples vistas requerirán múltiples componentes para la misma ruta. Asegúrate de utilizar la opción `components` (con una _s_ al final):
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

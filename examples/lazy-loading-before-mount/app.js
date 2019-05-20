@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<div>Home</div>' }
 const Foo = () =>
@@ -13,7 +13,7 @@ const Foo = () =>
       , 10)
   })
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

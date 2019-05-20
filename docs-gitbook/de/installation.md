@@ -25,9 +25,9 @@ Wenn ein Module-System genutzt wird (z.B. Webpack, Browserify), muss der Router 
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 Wenn globale Skript-Tags genutzt werden ist das nicht notwendig.

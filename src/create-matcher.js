@@ -1,6 +1,7 @@
 /* @flow */
 
-import type VueRouter from './index'
+import type VuebRouter from './index'
+import { proto } from './install'
 import { resolvePath } from './util/path'
 import { assert, warn } from './util/warn'
 import { createRoute } from './util/route'
@@ -11,18 +12,34 @@ import { normalizeLocation } from './util/location'
 export type Matcher = {
   match: (raw: RawLocation, current?: Route, redirectedFrom?: Location) => Route;
   addRoutes: (routes: Array<RouteConfig>) => void;
+  matchBackRoutes: (routes: Array<RouteConfig>) => void;
 };
-
 export function createMatcher (
   routes: Array<RouteConfig>,
-  router: VueRouter
+  router: VuebRouter
 ): Matcher {
   const { pathList, pathMap, nameMap } = createRouteMap(routes)
-
   function addRoutes (routes) {
     createRouteMap(routes, pathList, pathMap, nameMap)
   }
-
+  function matchBackRoutes (
+    raw,
+    routes) {
+    const routeMap = createRouteMap(Object.values(routes), pathList, pathMap, nameMap)
+    const pathList = routeMap.pathList
+    const pathMap = routeMap.pathMap
+    const location = normalizeLocation(raw, '', false)
+    if (location.path) {
+      location.params = {}
+      proto._router.options.routes = routes
+      pathList.forEach(path => {
+        if (matchRoute(pathMap[path].regex, location.path, location.params)) {
+          proto._route = createRoute(pathMap[path], location, pathMap[path].redirect, proto._router)
+        }
+        return false
+      })
+    }
+  }
   function match (
     raw: RawLocation,
     currentRoute?: Route,
@@ -168,7 +185,8 @@ export function createMatcher (
 
   return {
     match,
-    addRoutes
+    addRoutes,
+    matchBackRoutes
   }
 }
 

@@ -5,7 +5,7 @@ The default mode for `vue-router` is _hash mode_ - it uses the URL hash to simul
 To get rid of the hash, we can use the router's **history mode**, which leverages the `history.pushState` API to achieve URL navigation without a page reload:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -127,7 +127,7 @@ Add this to your `firebase.json`:
 There is a caveat to this: Your server will no longer report 404 errors as all not-found paths now serve up your `index.html` file. To get around the issue, you should implement a catch-all route within your Vue app to show a 404 page:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

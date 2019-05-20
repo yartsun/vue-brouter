@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import VueRouter from '../../../src/index'
+import VuebRouter from '../../../src/index'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 describe('custom query parse/stringify', () => {
   it('should work', () => {
-    const router = new VueRouter({
+    const router = new VuebRouter({
       parseQuery: () => ({ foo: 1 }),
       stringifyQuery: () => '?foo=1'
     })

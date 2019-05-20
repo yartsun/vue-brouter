@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Root = { template: '<div>root</div>' }
 const Home = { template: '<div><h1>Home</h1><router-view></router-view></div>' }
@@ -12,7 +12,7 @@ const Default = { template: '<div>default</div>' }
 const Nested = { template: '<router-view/>' }
 const NestedFoo = { template: '<div>nested foo</div>' }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

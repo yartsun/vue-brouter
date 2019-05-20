@@ -1,19 +1,19 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
 // 1. Use plugin.
 // This installs <router-view> and <router-link>,
-// and injects $router and $route to all router-enabled child components
-Vue.use(VueRouter)
+// and injects $bRouter and $bRoute to all router-enabled child components
+Vue.use(VuebRouter)
 
 // 2. Define route components
 const Home = { template: '<div>home</div>' }
 const Foo = { template: '<div>foo</div>' }
 const Bar = { template: '<div>bar</div>' }
-const Unicode = { template: '<div>unicode: {{ $route.params.unicode }}</div>' }
+const Unicode = { template: '<div>unicode: {{ $bRoute.params.unicode }}</div>' }
 
 // 3. Create the router
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'hash',
   base: __dirname,
   routes: [
@@ -43,8 +43,8 @@ new Vue({
         <li><router-link to="/é/ñ?t=%25ñ">/é/ñ?t=%ñ</router-link></li>
         <li><router-link to="/é/ñ#é">/é/ñ#é</router-link></li>
       </ul>
-      <pre id="query-t">{{ $route.query.t }}</pre>
-      <pre id="hash">{{ $route.hash }}</pre>
+      <pre id="query-t">{{ $bRoute.query.t }}</pre>
+      <pre id="hash">{{ $bRoute.hash }}</pre>
       <router-view class="view"></router-view>
     </div>
   `

@@ -7,7 +7,7 @@
 ルーターインスタンスを作る時に、 `scrollBehavior` 関数を提供できます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [...],
   scrollBehavior (to, from, savedPosition) {
     // 望みのポジションを返す

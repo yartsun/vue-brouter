@@ -11,7 +11,7 @@
 뷰는 컴포넌트를 사용하여 렌더링 되므로 여러 뷰에는 동일한 라우트에 대해 여러 컴포넌트가 필요합니다. `components`(s를 붙입니다) 옵션을 사용해야합니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

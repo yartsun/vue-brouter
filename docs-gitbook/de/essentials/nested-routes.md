@@ -25,10 +25,10 @@ Wir bauen auf der App auf, die im letzten Kapitel erstellt wurde:
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -41,17 +41,17 @@ Die `router-view` Komponente ist das Outlet der obersten Ebene. Sie rendert die 
 const User = {
   template: `
     <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
+      <h2>User {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
 }
 ```
 
-Um Komponenten in diesem verschachtelten Outlet zu rendern, müssen wir die `children`-Option in der Konfiguration des `VueRouter`-Konstruktors verwenden.
+Um Komponenten in diesem verschachtelten Outlet zu rendern, müssen wir die `children`-Option in der Konfiguration des `VuebRouter`-Konstruktors verwenden.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User,
       children: [
@@ -82,7 +82,7 @@ Wie du sieht, ist die `children`-Option nur eine weiteres Array mit Route-Konfig
 Wenn du nun aber mit mit der aktuellen Konfiguration `/user/foo` aufrufst, wird nichts im `router-view` Outlet von `User` gerendert, da keine Sub-Route gematched wurde. Wollen wir in dem Fall dennoch eine Komponente rendern, erreichen wir das ganz einfach mit einer Route im `children`-Array, die einen leeren String als Pfad hat:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:id', component: User,

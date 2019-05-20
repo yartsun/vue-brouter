@@ -25,9 +25,9 @@ When used with a module system, you must explicitly install the router via `Vue.
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 You don't need to do this when using global script tags.

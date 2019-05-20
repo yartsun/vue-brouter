@@ -5,7 +5,7 @@
 해시를 제거하기 위해 라우터의 **history 모드** 를 사용할 수 있습니다. `history.pushState` API를 활용하여 페이지를 다시 로드하지 않고도 URL 탐색을 할 수 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -105,7 +105,7 @@ Node.js/Express의 경우 [connect-history-api-fallback 미들웨어](https://gi
 
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

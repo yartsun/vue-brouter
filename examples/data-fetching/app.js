@@ -1,12 +1,12 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 import Post from './Post.vue'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<div>home</div>' }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   routes: [

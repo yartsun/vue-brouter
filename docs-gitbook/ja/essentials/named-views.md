@@ -11,7 +11,7 @@
 1 つの view は 1 つのコンポーネントを使って描画されます。したがって、同じルートに対する複数の view には複数のコンポーネントが必須になります。この `components` (s が付いている) オプションに注意してください。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

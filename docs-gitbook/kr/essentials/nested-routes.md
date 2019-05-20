@@ -25,10 +25,10 @@
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -41,7 +41,7 @@ const router = new VueRouter({
 const User = {
   template: `
     <div class="user">
-      <h2>User {{ $route.params.id }}</h2>
+      <h2>User {{ $bRoute.params.id }}</h2>
       <router-view></router-view>
     </div>
   `
@@ -49,10 +49,10 @@ const User = {
 ```
 
 이 중첩 outlet에 컴포넌트를 렌더링하려면 `children`을 사용해야합니다.
-`VueRouter` 생성자의 옵션 config:
+`VuebRouter` 생성자의 옵션 config:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User,
       children: [
@@ -81,7 +81,7 @@ const router = new VueRouter({
 이 시점에서, 위의 설정으로, `/user/foo`를 방문했을 때 하위 라우트가 매치되지 않았기 때문에 `User`의 outlet에 아무것도 출력되지 않습니다. 어쩌면 거기에 무언가를 렌더링하고 싶을지도 모릅니다. 이 경우 빈 서브 루트 경로를 제공 할 수 있습니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/user/:id', component: User,

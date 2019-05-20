@@ -5,7 +5,7 @@
 重定向也是通过 `routes` 配置来完成，下面例子是从 `/a` 重定向到 `/b`：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -15,7 +15,7 @@ const router = new VueRouter({
 重定向的目标也可以是一个命名的路由：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -25,7 +25,7 @@ const router = new VueRouter({
 甚至是一个方法，动态返回重定向目标：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // 方法接收 目标路由 作为参数
@@ -48,7 +48,7 @@ const router = new VueRouter({
 上面对应的路由配置为：
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

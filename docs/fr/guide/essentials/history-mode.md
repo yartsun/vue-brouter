@@ -5,7 +5,7 @@ Le mode par défaut de `vue-router` est le _mode hash_. Il utilise la partie has
 Pour nous passer du hash, nous pouvons utiliser le **mode historique** qui utilisera l'API `history.pushState` afin de permettre une navigation sans rechargement de page :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -127,7 +127,7 @@ Ajouter ceci à votre fichier `firebase.json` :
 Il y a une limitation a tout ceci. Votre serveur ne renverra plus les erreurs 404 des chemins qui ne sont pas trouvés puisqu'il va servir à présent le fichier `index.html`. Pour contourner ce problème, vous pouvez implémenter une route concordant avec toutes les adresses en 404 dans votre application Vue :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

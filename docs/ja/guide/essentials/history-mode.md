@@ -5,7 +5,7 @@
 その hash を取り除くために、ページのリロード無しに URL 遷移を実現する `history.pushState` API を利用したルーターの **history モード** を使うことができます。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -127,7 +127,7 @@ rewrite {
 この点に関して注意があります。全ての not-found パスが `index.html` を提供するため、もはや 404 エラーをサーバーがレポートしなくなります。回避策として、Vue アプリケーション内で 404 ページを表示するために catch-all ルートを実装すべきです。
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

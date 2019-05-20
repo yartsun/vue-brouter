@@ -34,7 +34,7 @@
 ## JavaScript
 
 ``` js
-// 0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
+// 0. 如果使用模块化机制编程，导入Vue和VuebRouter，要调用 Vue.use(VuebRouter)
 
 // 1. 定义 (路由) 组件。
 // 可以从其他文件 import 进来
@@ -53,7 +53,7 @@ const routes = [
 
 // 3. 创建 router 实例，然后传 `routes` 配置
 // 你还可以传别的配置参数, 不过先这么简单着吧。
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // (缩写) 相当于 routes: routes
 })
 
@@ -67,7 +67,7 @@ const app = new Vue({
 // 现在，应用已经启动了！
 ```
 
-通过注入路由器，我们可以在任何组件内通过 `this.$router` 访问路由器，也可以通过 `this.$route` 访问当前路由：
+通过注入路由器，我们可以在任何组件内通过 `this.$bRouter` 访问路由器，也可以通过 `this.$bRoute` 访问当前路由：
 
 ```js
 // Home.vue
@@ -75,20 +75,20 @@ export default {
   computed: {
     username () {
       // 我们很快就会看到 `params` 是什么
-      return this.$route.params.username
+      return this.$bRoute.params.username
     }
   },
   methods: {
     goBack () {
       window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+        ? this.$bRouter.go(-1)
+        : this.$bRouter.push('/')
     }
   }
 }
 ```
 
-该文档通篇都常使用 `router` 实例。留意一下 `this.$router` 和 `router` 使用起来完全一样。我们使用 `this.$router` 的原因是我们并不想在每个独立需要封装路由的组件中都导入路由。
+该文档通篇都常使用 `router` 实例。留意一下 `this.$bRouter` 和 `router` 使用起来完全一样。我们使用 `this.$bRouter` 的原因是我们并不想在每个独立需要封装路由的组件中都导入路由。
 
 你可以看看这个[在线的](https://jsfiddle.net/yyx990803/xgrjzsup/)例子。
 

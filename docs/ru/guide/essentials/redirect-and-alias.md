@@ -5,7 +5,7 @@
 Перенаправления также определяются в конфигурации маршрутов в опции `routes`. Например, чтобы перенаправить с `/a` на `/b`:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: '/b' }
   ]
@@ -15,7 +15,7 @@ const router = new VueRouter({
 Перенаправление может осуществляться и на именованный маршрут:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: { name: 'foo' }}
   ]
@@ -25,7 +25,7 @@ const router = new VueRouter({
 Или даже можно указать функцию для организации динамического перенаправления:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', redirect: to => {
       // в функцию в качестве аргумента передаётся маршрут
@@ -48,7 +48,7 @@ const router = new VueRouter({
 В виде конфигурации маршрутизатора вышесказанное может быть выражено так:
 
 ```js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/a', component: A, alias: '/b' }
   ]

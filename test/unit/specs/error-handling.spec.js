@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import VueRouter from '../../../src/index'
+import VuebRouter from '../../../src/index'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 describe('error handling', () => {
   it('onReady errors', () => {
-    const router = new VueRouter()
+    const router = new VuebRouter()
     const err = new Error('foo')
     router.beforeEach(() => { throw err })
     router.onError(() => {})
@@ -21,7 +21,7 @@ describe('error handling', () => {
   })
 
   it('navigation errors', () => {
-    const router = new VueRouter()
+    const router = new VuebRouter()
     const err = new Error('foo')
     const spy = jasmine.createSpy('error')
     router.onError(spy)
@@ -38,7 +38,7 @@ describe('error handling', () => {
     const spy1 = jasmine.createSpy('error')
     const spy2 = jasmine.createSpy('errpr')
     const Comp = () => { throw err }
-    const router = new VueRouter({
+    const router = new VuebRouter({
       routes: [
         { path: '/', component: Comp }
       ]

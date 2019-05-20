@@ -11,7 +11,7 @@ Parfois vous avez besoin d'afficher différentes vues en même temps plutôt que
 Une vue est rendue en utilisant un composant, donc de multiples vues nécessitent de multiples composants pour une même route. Assurez-vous d'utiliser l'option `components` (avec un s) :
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

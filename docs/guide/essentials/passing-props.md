@@ -1,16 +1,16 @@
 # Passing Props to Route Components
 
-Using `$route` in your component creates a tight coupling with the route which limits the flexibility of the component as it can only be used on certain URLs.
+Using `$bRoute` in your component creates a tight coupling with the route which limits the flexibility of the component as it can only be used on certain URLs.
 
 To decouple this component from the router use option `props`:
 
-**Instead of coupling to `$route`:**
+**Instead of coupling to `$bRoute`:**
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -24,7 +24,7 @@ const User = {
   props: ['id'],
   template: '<div>User {{ id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User, props: true },
 
@@ -49,7 +49,7 @@ When `props` is set to `true`, the `route.params` will be set as the component p
 When `props` is an object, this will be set as the component props as-is. Useful for when the props are static.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
   ]
@@ -61,7 +61,7 @@ const router = new VueRouter({
 You can create a function that returns props. This allows you to cast parameters into other types, combine static values with route-based values, etc.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
   ]

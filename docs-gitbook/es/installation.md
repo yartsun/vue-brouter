@@ -25,9 +25,9 @@ Cuando lo utilices con un sistema de empaquetamiento de módulos, debes instalar
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 No necesitas hacer esto cuando utilices etiquetas _script_ globales.

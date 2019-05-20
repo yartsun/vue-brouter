@@ -25,9 +25,9 @@ npm install vue-router
 
 ``` js
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 ```
 
 グローバルな script タグを使っている場合は必要ありません。

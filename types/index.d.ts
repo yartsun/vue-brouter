@@ -1,7 +1,7 @@
 import "./vue";
-import { VueRouter } from "./router";
+import { VuebRouter } from "./router";
 
-export default VueRouter;
+export default VuebRouter;
 
 export {
   RouterMode,

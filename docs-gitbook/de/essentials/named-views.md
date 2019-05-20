@@ -11,7 +11,7 @@ Manchmal muss man mehrere Views zur selben Zeit darstellen, anstatt sie zu versc
 Ein View wird durch eine Komponente gerendert, deswegen benötigen mehrere Views auch mehrere Komponenten für dieselbe Route. Dabei ist es wichtig, `components` (Plural) in den Optionen zu verwenden:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     {
       path: '/',

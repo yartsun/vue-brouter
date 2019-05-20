@@ -5,7 +5,7 @@ El modo por defecto para `vue-router` es _hash mode_ - el cual utiliza una almoh
 Para eliminar la almohadilla, podemos seleccionar el **modo historia** del `router`, el cual utiliza el método `history.pushState` de la API para conseguir una navegación sin recarga de página:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [...]
 })
@@ -49,7 +49,7 @@ Para Node.js/Express, considera utilizar el middleware [connect-history-api-fall
 Hay una deventaja para esto: tu servidor ya no reportará errores 404 dado que todas las rutas no encontradas serán redireccionadas al archivo `index.html`. Para solucionar este problema debes implementar dentro de la aplicación Vue una ruta por defecto para mostrar una página de error 404:
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   routes: [
     { path: '*', component: NotFoundComponent }

@@ -29,7 +29,7 @@ Crear una aplicación de una sola página (SPA por sus siglas en inglés) con Vu
 ### JavaScript
 
 ``` js
-// 0. Si utilizas un sistema de empaquetamiento de módulos (por ejemplo, a través de vue-cli), importa Vue y VueRouter y luego ejecuta Vue.use(VueRouter).
+// 0. Si utilizas un sistema de empaquetamiento de módulos (por ejemplo, a través de vue-cli), importa Vue y VuebRouter y luego ejecuta Vue.use(VuebRouter).
 
 // 1. Define componentes de enrutamiento.
 // Estos pueden ser importados desde otros archivos
@@ -49,7 +49,7 @@ const routes = [
 // 3. Crea una instancia del _router_ y pasa la opción `routes`
 // Puedes pasar opciones adicionales aquí,
 // pero mantengámoslo simple por el momento.
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // forma corta para routes: routes
 })
 

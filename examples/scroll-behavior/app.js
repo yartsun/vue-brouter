@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import VuebRouter from 'vue-router'
 
-Vue.use(VueRouter)
+Vue.use(VuebRouter)
 
 const Home = { template: '<div class="home">home</div>' }
 const Foo = { template: '<div class="foo">foo</div>' }
@@ -64,7 +64,7 @@ const scrollBehavior = function (to, from, savedPosition) {
   }
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   mode: 'history',
   base: __dirname,
   scrollBehavior,

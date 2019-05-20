@@ -7,7 +7,7 @@ const User = {
   template: '<div>User</div>'
 }
 
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     // dynamic segments start with a colon
     { path: '/user/:id', component: User }
@@ -17,36 +17,36 @@ const router = new VueRouter({
 
 Now URLs like `/user/foo` and `/user/bar` will both map to the same route.
 
-A dynamic segment is denoted by a colon `:`. When a route is matched, the value of the dynamic segments will be exposed as `this.$route.params` in every component. Therefore, we can render the current user ID by updating `User`'s template to this:
+A dynamic segment is denoted by a colon `:`. When a route is matched, the value of the dynamic segments will be exposed as `this.$bRoute.params` in every component. Therefore, we can render the current user ID by updating `User`'s template to this:
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
 ```
 
 You can check out a live example [here](https://jsfiddle.net/yyx990803/4xfa2f19/).
 
-You can have multiple dynamic segments in the same route, and they will map to corresponding fields on `$route.params`. Examples:
+You can have multiple dynamic segments in the same route, and they will map to corresponding fields on `$bRoute.params`. Examples:
 
-| pattern | matched path | $route.params |
+| pattern | matched path | $bRoute.params |
 |---------|------|--------|
 | /user/:username | /user/evan | `{ username: 'evan' }` |
 | /user/:username/post/:post_id | /user/evan/post/123 | `{ username: 'evan', post_id: '123' }` |
 
-In addition to `$route.params`, the `$route` object also exposes other useful information such as `$route.query` (if there is a query in the URL), `$route.hash`, etc. You can check out the full details in the [API Reference](../../api/#the-route-object).
+In addition to `$bRoute.params`, the `$bRoute` object also exposes other useful information such as `$bRoute.query` (if there is a query in the URL), `$bRoute.hash`, etc. You can check out the full details in the [API Reference](../../api/#the-route-object).
 
 ## Reacting to Params Changes
 
 One thing to note when using routes with params is that when the user navigates from `/user/foo` to `/user/bar`, **the same component instance will be reused**. Since both routes render the same component, this is more efficient than destroying the old instance and then creating a new one. **However, this also means that the lifecycle hooks of the component will not be called**.
 
-To react to params changes in the same component, you can simply watch the `$route` object:
+To react to params changes in the same component, you can simply watch the `$bRoute` object:
 
 ``` js
 const User = {
   template: '...',
   watch: {
-    '$route' (to, from) {
+    '$bRoute' (to, from) {
       // react to route changes...
     }
   }
@@ -83,16 +83,16 @@ Regular params will only match characters in between url fragments, separated by
 When using _asterisk_ routes, make sure to correctly order your routes so that _asterisk_ ones are at the end.
 The route `{ path: '*' }` is usually used to 404 client side. If you are using _History mode_, make sure to [correctly configure your server](./history-mode.md) as well.
 
-When using an _asterisk_, a param named `pathMatch` is automatically added to `$route.params`. It contains the rest of the url matched by the _asterisk_:
+When using an _asterisk_, a param named `pathMatch` is automatically added to `$bRoute.params`. It contains the rest of the url matched by the _asterisk_:
 
 ```js
 // Given a route { path: '/user-*' }
-this.$router.push('/user-admin')
-this.$route.params.pathMatch // 'admin'
+this.$bRouter.push('/user-admin')
+this.$bRoute.params.pathMatch // 'admin'
 
 // Given a route { path: '*' }
-this.$router.push('/non-existing')
-this.$route.params.pathMatch // '/non-existing'
+this.$bRouter.push('/non-existing')
+this.$bRoute.params.pathMatch // '/non-existing'
 ```
 
 ## Advanced Matching Patterns

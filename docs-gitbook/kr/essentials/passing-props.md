@@ -1,16 +1,16 @@
 # 라우트 컴포넌트에 속성 전달
 
-컴포넌트에서 `$route`를 사용하면 특정 URL에서만 사용할 수 있는 컴포넌트의 유연성을 제한하는 라우트와 강한 결합을 만듭니다.
+컴포넌트에서 `$bRoute`를 사용하면 특정 URL에서만 사용할 수 있는 컴포넌트의 유연성을 제한하는 라우트와 강한 결합을 만듭니다.
 
 컴포넌트와 라우터 속성을 분리하려면 다음과 같이 하십시오.
 
-** $route에 의존성 추가**
+** $bRoute에 의존성 추가**
 
 ``` js
 const User = {
-  template: '<div>User {{ $route.params.id }}</div>'
+  template: '<div>User {{ $bRoute.params.id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User }
   ]
@@ -24,7 +24,7 @@ const User = {
   props: ['id'],
   template: '<div>User {{ id }}</div>'
 }
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/user/:id', component: User, props: true },
   ]
@@ -43,7 +43,7 @@ const router = new VueRouter({
 `props`가 정적일 때 유용합니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/promotion/from-newsletter', component: Promotion, props: { newsletterPopup: false } }
   ]
@@ -55,7 +55,7 @@ const router = new VueRouter({
 `props`를 반환하는 함수를 만들 수 있습니다. 이를 통해 전달인자를 다른 타입으로 캐스팅하고 적정인 값을 라우트 기반 값과 결합됩니다.
 
 ``` js
-const router = new VueRouter({
+const router = new VuebRouter({
   routes: [
     { path: '/search', component: SearchUser, props: (route) => ({ query: route.query.q }) }
   ]

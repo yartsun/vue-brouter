@@ -32,7 +32,7 @@ Vue.js と vue-router を使ったシングルページアプリケーション�
 ## JavaScript
 
 ``` js
-// 0. モジュールシステムを使っている場合 (例: vue-cli 経由で)、Vue と VueRouter をインポートし、`Vue.use(VueRouter)` を呼び出します。
+// 0. モジュールシステムを使っている場合 (例: vue-cli 経由で)、Vue と VuebRouter をインポートし、`Vue.use(VuebRouter)` を呼び出します。
 
 // 1. ルートコンポーネントを定義します
 // 他のファイルからインポートすることもできます
@@ -52,7 +52,7 @@ const routes = [
 // 3. ルーターインスタンスを作成して、ルートオプションを渡します
 // 追加のオプションをここで指定できますが、
 // この例ではシンプルにしましょう
-const router = new VueRouter({
+const router = new VuebRouter({
   routes // `routes: routes` の短縮表記
 })
 
@@ -66,7 +66,7 @@ const app = new Vue({
 // これで開始です!
 ```
 
-ルーターを注入することによって、`this.$router` と同様、任意のコンポーネント内部で現在のルートを `this.$route` としてアクセスすることができます:
+ルーターを注入することによって、`this.$bRouter` と同様、任意のコンポーネント内部で現在のルートを `this.$bRoute` としてアクセスすることができます:
 
 ```js
 // Home.vue
@@ -74,20 +74,20 @@ export default {
   computed: {
     username () {
       // `params` が表示される
-      return this.$route.params.username
+      return this.$bRoute.params.username
     }
   },
   methods: {
     goBack () {
       window.history.length > 1
-        ? this.$router.go(-1)
-        : this.$router.push('/')
+        ? this.$bRouter.go(-1)
+        : this.$bRouter.push('/')
     }
   }
 }
 ```
 
-ドキュメントを通して、しばしば `router` インスタンスを使用することがよくあります。`this.$router` は `router` を使用するのと全く同じです。`this.$router` を使用する理由は、ルーティング操作する必要がある全てのコンポーネントにルーターをインポートしたくないからです。
+ドキュメントを通して、しばしば `router` インスタンスを使用することがよくあります。`this.$bRouter` は `router` を使用するのと全く同じです。`this.$bRouter` を使用する理由は、ルーティング操作する必要がある全てのコンポーネントにルーターをインポートしたくないからです。
 
 [動作](https://jsfiddle.net/yyx990803/xgrjzsup/) の例も確認してみてください.
 

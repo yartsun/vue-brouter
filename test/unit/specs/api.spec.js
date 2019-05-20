@@ -220,40 +220,40 @@ describe('router app destroy handling', () => {
   })
 
   it('all apps point to the same router instance', () => {
-    expect(app1.$router).toBe(app2.$router)
-    expect(app2.$router).toBe(app3.$router)
+    expect(app1.$bRouter).toBe(app2.$bRouter)
+    expect(app2.$bRouter).toBe(app3.$bRouter)
   })
 
   it('should have all 3 registered apps', () => {
-    expect(app1.$router.app).toBe(app1)
-    expect(app1.$router.apps.length).toBe(3)
-    expect(app1.$router.apps[0]).toBe(app1)
-    expect(app1.$router.apps[1]).toBe(app2)
-    expect(app1.$router.apps[2]).toBe(app3)
+    expect(app1.$bRouter.app).toBe(app1)
+    expect(app1.$bRouter.apps.length).toBe(3)
+    expect(app1.$bRouter.apps[0]).toBe(app1)
+    expect(app1.$bRouter.apps[1]).toBe(app2)
+    expect(app1.$bRouter.apps[2]).toBe(app3)
   })
 
   it('should remove 2nd destroyed app from this.apps', () => {
     app2.$destroy()
-    expect(app1.$router.app).toBe(app1)
-    expect(app1.$router.apps.length).toBe(2)
-    expect(app1.$router.apps[0]).toBe(app1)
-    expect(app1.$router.apps[1]).toBe(app3)
+    expect(app1.$bRouter.app).toBe(app1)
+    expect(app1.$bRouter.apps.length).toBe(2)
+    expect(app1.$bRouter.apps[0]).toBe(app1)
+    expect(app1.$bRouter.apps[1]).toBe(app3)
   })
 
   it('should remove 1st destroyed app and replace current app', () => {
     app1.$destroy()
-    expect(app3.$router.app).toBe(app2)
-    expect(app3.$router.apps.length).toBe(2)
-    expect(app3.$router.apps[0]).toBe(app2)
-    expect(app1.$router.apps[1]).toBe(app3)
+    expect(app3.$bRouter.app).toBe(app2)
+    expect(app3.$bRouter.apps.length).toBe(2)
+    expect(app3.$bRouter.apps[0]).toBe(app2)
+    expect(app1.$bRouter.apps[1]).toBe(app3)
   })
 
   it('should remove all apps', () => {
     app1.$destroy()
     app3.$destroy()
     app2.$destroy()
-    expect(app3.$router.app).toBe(null)
-    expect(app3.$router.apps.length).toBe(0)
+    expect(app3.$bRouter.app).toBe(null)
+    expect(app3.$bRouter.apps.length).toBe(0)
   })
 
   it('should keep current app if already defined', () => {
@@ -261,9 +261,9 @@ describe('router app destroy handling', () => {
       router,
       render (h) { return h('div') }
     })
-    expect(app4.$router.app).toBe(app1)
-    expect(app4.$router.apps.length).toBe(4)
-    expect(app4.$router.apps[3]).toBe(app4)
+    expect(app4.$bRouter.app).toBe(app1)
+    expect(app4.$bRouter.apps.length).toBe(4)
+    expect(app4.$bRouter.apps[3]).toBe(app4)
   })
 
   it('should replace current app if none is assigned when creating the app', () => {
@@ -275,8 +275,8 @@ describe('router app destroy handling', () => {
       render (h) { return h('div') }
     })
     expect(router.app).toBe(app4)
-    expect(app4.$router).toBe(router)
-    expect(app4.$router.apps.length).toBe(1)
-    expect(app4.$router.apps[0]).toBe(app4)
+    expect(app4.$bRouter).toBe(router)
+    expect(app4.$bRouter.apps.length).toBe(1)
+    expect(app4.$bRouter.apps[0]).toBe(app4)
   })
 })
