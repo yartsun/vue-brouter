@@ -1,6 +1,6 @@
 /*!
-  * vue-router v3.0.6
-  * (c) 2019 Evan You
+  * vue-router v1.0.8
+  * (c) 2020 Evan You
   * @license MIT
   */
 (function (global, factory) {
@@ -535,7 +535,7 @@ function findAnchor (children) {
 }
 
 var _Vue;
-
+var proto;
 function install (Vue) {
   if (install.installed && _Vue === Vue) { return }
   install.installed = true;
@@ -550,12 +550,10 @@ function install (Vue) {
       i(vm, callVal);
     }
   };
-  var bVue;
   Vue.mixin({
     beforeCreate: function beforeCreate () {
       if (isDef(this.$options.router)) {
-        global.bVue = this;
-        console.log(bVue);
+        proto = this;
         this._routerRoot = this;
         this._router = this.$options.router;
         this._router.init(this);
@@ -1345,6 +1343,7 @@ function normalizeLocation (
 
 /*  */
 
+
 function createMatcher (
   routes,
   router
@@ -1353,26 +1352,35 @@ function createMatcher (
   var pathList = ref.pathList;
   var pathMap = ref.pathMap;
   var nameMap = ref.nameMap;
-
   function addRoutes (routes) {
     createRouteMap(routes, pathList, pathMap, nameMap);
   }
   function matchBackRoutes (
     raw,
-    routes) {
-    var routeMap = createRouteMap(Object.values(routes), pathList, pathMap, nameMap);
+    routes,
+    routeMapStash) {
+    var routeMap = Array;
+
+    if (Object.keys(routeMapStash).length) {
+      routeMap = routeMapStash;
+    } else {
+      routeMap = createRouteMap(Object.values(routes), pathList, pathMap, nameMap);
+    }
     var pathList = routeMap.pathList;
     var pathMap = routeMap.pathMap;
+    proto._router.options.routes = routes;
     var location = normalizeLocation(raw, '', false);
+
     if (location.path) {
       location.params = {};
-      bVue._router.options.routes = routes;
+
       pathList.forEach(function (path) {
         if (matchRoute(pathMap[path].regex, location.path, location.params)) {
-          bVue._route = createRoute(pathMap[path], location, pathMap[path].redirect, bVue._router);
+          proto._route = createRoute(pathMap[path], location, pathMap[path].redirect, proto._router);
         }
-        return false
+        return routeMap
       });
+      return routeMap
     }
   }
   function match (
@@ -2681,7 +2689,7 @@ function createHref (base, fullPath, mode) {
 }
 
 VuebRouter.install = install;
-VuebRouter.version = '3.0.6';
+VuebRouter.version = '1.0.8';
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VuebRouter);
