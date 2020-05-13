@@ -1,6 +1,6 @@
 {
   "name": "vue-bRouter",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "unofficial router for Vue.js 2 with backend Routes",
   "author": "Bogdan Yartsun",
   "license": "MIT",
