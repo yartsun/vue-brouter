@@ -550,10 +550,19 @@ function install (Vue) {
       i(vm, callVal);
     }
   };
+<<<<<<< HEAD
   Vue.mixin({
     beforeCreate: function beforeCreate () {
       if (isDef(this.$options.router)) {
         proto = this;
+=======
+  var bVue;
+  Vue.mixin({
+    beforeCreate: function beforeCreate () {
+      if (isDef(this.$options.router)) {
+        global.bVue = this;
+        console.log(bVue);
+>>>>>>> e13772e543c43bf1fc834c58443d1bb67e8ccc55
         this._routerRoot = this;
         this._router = this.$options.router;
         this._router.init(this);
@@ -1343,7 +1352,10 @@ function normalizeLocation (
 
 /*  */
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e13772e543c43bf1fc834c58443d1bb67e8ccc55
 function createMatcher (
   routes,
   router
@@ -1357,6 +1369,7 @@ function createMatcher (
   }
   function matchBackRoutes (
     raw,
+<<<<<<< HEAD
     routes,
     routeMapStash) {
     var routeMap = Array;
@@ -1381,6 +1394,22 @@ function createMatcher (
         return routeMap
       });
       return routeMap
+=======
+    routes) {
+    var routeMap = createRouteMap(Object.values(routes), pathList, pathMap, nameMap);
+    var pathList = routeMap.pathList;
+    var pathMap = routeMap.pathMap;
+    var location = normalizeLocation(raw, '', false);
+    if (location.path) {
+      location.params = {};
+      bVue._router.options.routes = routes;
+      pathList.forEach(function (path) {
+        if (matchRoute(pathMap[path].regex, location.path, location.params)) {
+          bVue._route = createRoute(pathMap[path], location, pathMap[path].redirect, bVue._router);
+        }
+        return false
+      });
+>>>>>>> e13772e543c43bf1fc834c58443d1bb67e8ccc55
     }
   }
   function match (
@@ -2689,7 +2718,11 @@ function createHref (base, fullPath, mode) {
 }
 
 VuebRouter.install = install;
+<<<<<<< HEAD
 VuebRouter.version = '1.0.8';
+=======
+VuebRouter.version = '3.0.6';
+>>>>>>> e13772e543c43bf1fc834c58443d1bb67e8ccc55
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VuebRouter);
